@@ -1,15 +1,19 @@
-
 from classes.arme import Arme
 from classes.joueur import Joueur
 from classes.creature import Creature
-
-
+import random as rd
 
 def degat_joueur():
   attaque_joueur=Joueur.get_attaque()
   arme_joueur = Joueur.get_arme()  # Pas besoin de passer 'joueur' ici
   attaque_arme_joueur = arme_joueur.get_attaque() #str nom arme 
-  return (attaque_joueur+attaque_arme_joueur )
+
+  chance = rd.randint(1,100)
+  
+  if chance >20: 
+    return (0)
+  else:
+    return (attaque_joueur+attaque_arme_joueur)
 
 def degat_creature():
   attaque_creature=Creature.get_attaque()
