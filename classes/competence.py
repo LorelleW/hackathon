@@ -1,7 +1,7 @@
 class Competence():
-    def __init__(self,nom:str,niveau:int,description:str,delai:int):
+    def __init__(self,nom:str,niv:int,description:str,delai:int):
         self.__nom=nom 
-        self.__niveau=niveau
+        self.__niv=niv
         self.__description=description
         self.__delai=delai
 
@@ -11,11 +11,11 @@ class Competence():
     def set_nom(self, nom):
         self.__nom = nom
 
-    def get_niveau(self):
-        return self.__niveau
+    def get_niv(self):
+        return self.__niv
 
-    def set_niveau(self, niveau):
-        self.__niveau = niveau
+    def set_niv(self, niv):
+        self.__niv = niv
 
     def get_description(self):
         return self.__description
