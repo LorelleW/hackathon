@@ -1,4 +1,4 @@
-public class Pnj():
+class Pnj():
     def __init__(self,identite,metier:str,statistiques,inventaire,avisdujoueur): 
         self.__identite=identite
         self.__metier=metier
