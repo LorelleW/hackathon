@@ -1,4 +1,4 @@
-class armure():
+public class armure():
     def __init__(self,type5:str,restriction,defense,rarete,etat:str): 
         self.__type5=type5 
         self.__restriction=restriction
