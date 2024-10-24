@@ -1,11 +1,18 @@
 class Arme():
-    def __init__(self,attaque=0,rarete="A",prix=1,etat=100,restriction=1,type='poing'): 
+    def __init__(self,nom,attaque=0,rarete="A",prix=1,etat=100,restriction=1,type='poing'): 
+        self.__nom=nom
         self.__attaque=attaque
         self.__rarete=rarete
         self.__prix=prix
         self.__etat=etat
         self.__restriction=restriction
         self.__type=type
+
+    def get_nom(self):
+        return self.__nom
+    
+    def set_nom(self, nom):
+        self.__nom = nom
 
     def get_type(self):
         return self.__type
