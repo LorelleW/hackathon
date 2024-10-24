@@ -1,6 +1,6 @@
-from classes.pnj import *
-from classes.joueur import *
-from classes.inventaire import *
-from classes.echoppe import *
+from classes.pnj import Pnj
+from classes.joueur import Joueur
+from classes.inventaire import Inventaire
+from classes.echoppe import Echoppe
 
 
