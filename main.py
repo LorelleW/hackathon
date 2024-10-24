@@ -19,3 +19,4 @@ from classes.echoppe import echoppe
 from classes.effets import effets
 
 
+#creer personnage (nom etc)
