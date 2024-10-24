@@ -9,7 +9,7 @@ public class Batiment():
     def get_nom(self):
         return self.__nom
 
-    def set_nom_(self,nom):
+    def set_nom(self,nom):
         self.__nom=nom
 
     def get_age(self):
