@@ -1,6 +1,6 @@
 class Region():
     def __init__(self,typedelieu,topographie,population,position,proprietaire:str):
-        #Population est un dictionnaire {nom_creature: nombre_individus}
+        #Population est un dictionnaire {creature: nombre_individus}
         self.__typedelieu=typedelieu
         self.__topographie=topographie
         self.__population=population
@@ -39,23 +39,23 @@ class Region():
     def set_proprietaire(self,proprietaire):
         self.__proprietaire=proprietaire
 
-    def compter_individus(self, nom_creature):
-        return self.__population.get(nom_creature, 0)
+    def compter_individus(self, creature):
+        return self.__population.get(creature, 0)
 
-    def ajouter_creature(self, nom_creature, quantite=1):
-        if nom_creature in self.__population:
-            self.__population[nom_creature] += quantite
+    def ajouter_creature(self, creature, quantite=1):
+        if creature in self.__population:
+            self.__population[creature] += quantite
         else:
-            self.__population[nom_creature] = quantite
-        print(f"{quantite} {nom_creature}(s) ont été ajouté(s) à la population.")
+            self.__population[creature] = quantite
+        print(f"{quantite} {creature}(s) ont été ajouté(s) à la population.")
 
-    def retirer_creature(self, nom_creature, quantite=1):
-        if nom_creature in self.__population:
-            if self.__population[nom_creature] > quantite:
-                self.__population[nom_creature] -= quantite
-                print(f"{quantite} {nom_creature}(s) ont été retiré(s) de la population.")
-            elif self.__population[nom_creature] <= quantite:
-                del self.__population[nom_creature]
-                print(f"Tous les {nom_creature}(s) ont été retiré(s) de la population.")
+    def retirer_creature(self, creature, quantite=1):
+        if creature in self.__population:
+            if self.__population[creature] > quantite:
+                self.__population[creature] -= quantite
+                print(f"{quantite} {creature}(s) ont été retiré(s) de la population.")
+            elif self.__population[creature] <= quantite:
+                del self.__population[creature]
+                print(f"Tous les {creature}(s) ont été retiré(s) de la population.")
         else:
-            print(f"Aucun {nom_creature} dans la population.")
+            print(f"Aucun {creature} dans la population.")
