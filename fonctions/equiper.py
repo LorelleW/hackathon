@@ -3,7 +3,7 @@ from classes.inventaire import Inventaire
 from classes.arme import *
 
 def arme_in_inventaire(inventaire, arme):
-    armes = Inventaire.get_arme(inventaire)
+    armes = Inventaire.get_armes(inventaire)
     for a in armes:
         if (a == arme):
             return True
@@ -19,5 +19,5 @@ def equiper_arme(joueur, arme):
     inventaire = Joueur.get_inventaire(joueur)
     if arme_in_inventaire(inventaire, arme):
         desequiper_arme(joueur)
-        Inventaire.supprimer_arme(inventaire, arme)
+        Inventaire.retirer_arme(inventaire, arme)
         Joueur.set_arme(joueur, arme)
