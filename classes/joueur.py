@@ -1,5 +1,5 @@
 public class Joueur():
-    def __init__(self,niv,pvmax,pv,attaque,defense,argent,identite,race,classe,inventaire,competences,arme,armure):
+    def __init__(self,niv=0:int,pvmax,pv,attaque,defense,argent,identite,race,classe,inventaire,competences,arme='poing':str,armure='sans armure':str):
         self.__niv=niv
         self.__pvmax=pvmax
         self.__pv=pv
