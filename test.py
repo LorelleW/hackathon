@@ -24,37 +24,30 @@ from fonctions.marchand import *
 Neant = Region("autre", 100, {}, 999, "Divinite_inconnue")
 
 humain = Race("humain", Neant, "D", 50)
-
 slime = Race("slime", Neant, "D", 50)
 
 Cocorico = Region("ville", 10, {humain: 100}, 50, "Zelda")
-
 humain.set_region(Cocorico)
 
 Lac_mort = Region("marais", 0, {slime: 15}, 10, "Slime_king")
-
 slime.set_region(Lac_mort)
 
 epeiste = Classe("epeiste", "epee", "degat")
 
 couronne = Objet("couronne", "accessoire", 1000, "or", "S")
-
 gelee = Objet("gelee", "autre", 1, "organique", "D")
 
-epee_bois = Arme(5, "F", 1, 100, 1, "epee")
+epee_bois = Arme("epee_bois", 5, "F", 1, 100, 1, "epee")
+armure_bois = Armure("armure_bois", 5, "F", 1, 99, 1, "haut")
 
-armure_bois = Armure(5, "F", 1, 99, 1, "haut")
-
-inventaire_Zelda = Inventaire([],[],[],[couronne])
+inventaire_Zelda = Inventaire([], [], [], [couronne])
 Zelda = Pnj("Zelda", "civil", 18, inventaire_Zelda, 50)
 
 force = Competence("force", 1, "attaque * 1.5", 5)
 
 inventaire_Link = Inventaire([], [], [], [])
-
 butin_slime = Butin([], [], [], [gelee], 1)
 
 Link = Joueur("Link", humain, epeiste, 1, 100, 100, 10, 5, [force], 10, inventaire_Link, epee_bois, armure_bois)
 
-slime1 = Creature("slime_vert", slime, epeiste, 1, 50, 50, 5, 0, [], [], [], butin_slime)
-
+slime1 = Creature("slime_vert", slime, epeiste, 1, 50, 50, 5, 0, [], poing, nu, butin_slime)
