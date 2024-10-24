@@ -103,3 +103,8 @@ Classe
 Effets
 	*nom
 	 description
+
+attaquer()
+vente()
+aller()
+equiper()
