@@ -1,12 +1,19 @@
 class Armure():
-    def __init__(self,defense=0,rarete="A",prix=1,etat=100,restriction=1,type='nu'): 
+    def __init__(self,nom,defense=0,rarete="A",prix=1,etat=100,restriction=1,type="nu"): 
+        self.__nom=nom
         self.__defense=defense
         self.__rarete=rarete
         self.__prix=prix
         self.__etat=etat
         self.__restriction=restriction
         self.__type=type
-        
+    
+    def get_nom(self):
+        return self.__nom
+    
+    def set_nom(self, nom):
+        self.__nom = nom
+
     def get_type(self):
         return self.__type
 
@@ -43,4 +50,4 @@ class Armure():
     def set_etat(self,etat):
         self.__etat=etat
         
-nu = Armure(0, "G", 0, 0, 0, "nu")        
+nu = Armure(0, "G", 0, 0, 0, "nu")
