@@ -1,7 +1,6 @@
 Nom,Région,Rarete,Reputation
-""Elfes Sylvains"",""Forêt Enchantée"",""S"",95
-""Orcs des Montagnes"",""Montagnes Rocheuses"",""A"",70
-""Dragons de Feu"",""Volcan Brûlant"","S",100
-""Humains de la Plaine"",""Plaines Fertiles"",""B"",85
-""Nains des Mines"",""Montagnes Caverneuses"",""A"",80
-""Esprits des Sables"",""Désert Infinis"",""C"",60
+"""Elfes Sylvains""","""Forêt Enchantée""","""S""",95
+"""Orcs des Montagnes""","""Montagnes Rocheuses""","""A""",70
+"""Dragons de Feu""","""Volcan Brûlant""","""S""",100
+"""Humains de la Plaine""","""Plaines Fertiles""","""B""",85
+"""Nains des Mines""","""Montagnes Caverneuses""","""A""",80
