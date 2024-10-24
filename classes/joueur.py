@@ -1,4 +1,4 @@
-from combattant import Combattant
+from classes.combattant import Combattant
 
 class Joueur(Combattant):
     def __init__(self,identite,race,classe,niv,pvmax,pv,attaque,defense,competence,argent,inventaire,arme,armure):
