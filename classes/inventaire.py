@@ -1,4 +1,4 @@
-public class inventaire():
+public class Inventaire():
     def __init__(self,livre,armure,arme,objet): #mettre un système % de chance
         self.__livre=livre
         self.__armure=armure
