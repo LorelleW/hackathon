@@ -1,4 +1,5 @@
 import random as rd
+#type {1:magie; 2:classe; 3:objet; 4:arme; 5:armure; 6:echoppe; 7:livre}
 from classes.competence import Competence
 from classes.magie import Magie
 from classes.race import Race
