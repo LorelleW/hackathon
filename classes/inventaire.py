@@ -90,9 +90,39 @@ class Inventaire():
         #else:
             #print(f"Aucun objet '{objet}' n'a été trouvé dans l'inventaire.")
 
-    def arme_in_inventaire(inventaire, arme):
-        armes = Inventaire.get_armes(inventaire)
+    def arme_in(self, arme):
+        armes = Inventaire.get_armes(self)
         for a in armes:
             if (a == arme):
                 return True
         return False
+
+    def livre_in(self, livre):
+        livres = Inventaire.get_livres(self)
+        for a in livres:
+            if (a == livre):
+                return True
+        return False
+
+    def armure_in(self, armure):
+        armures = Inventaire.get_armures(self)
+        for a in armures:
+            if (a == armure):
+                return True
+        return False
+
+
+    def objet_in(self, objet):
+        objets = Inventaire.get_objets(self)
+        for a in objet:
+            if (a == objet):
+                return True
+        return False
+
+
+
+
+
+
+
+
