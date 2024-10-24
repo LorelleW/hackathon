@@ -2,8 +2,8 @@ from classes.arme import *
 from classes.armure import *
 
 class Combattant(): 
-    def __init__(self,identite,race,classe,niv,pvmax,pv,attaque,defense,competence,arme=poing,armure=nu):
-        self.__identite = identite
+    def __init__(self,nom,race,classe,niv,pvmax,pv,attaque,defense,competence,arme=poing,armure=nu):
+        self.__nom = nom
         self.__race = race
         self.__classe = classe
         self.__niv=niv
@@ -15,11 +15,11 @@ class Combattant():
         self.__arme=arme
         self.__armure=armure
 
-    def get_identite(self):
-        return self.__identite
+    def get_nom(self):
+        return self.__nom
 
-    def set_identite(self, identite):
-        self.__identite = identite
+    def set_nom(self, nom):
+        self.__nom = nom
     
     def get_race(self):
         return self.__race
