@@ -29,9 +29,9 @@ epeiste = Classe("epeiste", "epee", "degat")
 
 couronne = Objet("couronne", "accessoire", 1000, "or", "S")
 
-epee_bois = Arme(5, "F", 1, 100, 1, "epee")
+epee_bois = Arme("epee_bois", 5, "F", 1, 100, 1, "epee")
 
-armure_bois = Armure(5, "F", 1, 99, 1, "haut")
+armure_bois = Armure("armure_bois", 5, "F", 1, 99, 1, "haut")
 
 Zelda = Pnj("Zelda", "civil", 18, [couronne], 50)
 
