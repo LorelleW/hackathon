@@ -1,6 +1,6 @@
 Type de lieu,Topographie,Population,Position,Proprietaire
 """Forêt""","""Boisée, dense, avec des marécages""","{""Loup-garou: 10"", ""Sorcière: 2"", ""Fantôme: 15""}",5,"""La Sorcière des Marais"""
-"""Montagne""","""Pic rocheux, altitude élevée""","{""Dragon: 1"", ""Orc: 50"", ""Aigle géant: 3"", ""Nains: 1000""}",10,"""Chef des Kazem"""
+"""Montagne""","""Pic rocheux, altitude élevée""","{""Dragon: 1"", ""Orc: 50"", ""Aigle géant: 3"", ""Nains: 1000""}",10,"""Chef des 9azim"""
 """Désert""","""Dunes de sable, tempêtes fréquentes""","{""Scarabée géant: 200"", ""Nomades: 20"", ""Serpent de sable: 5""}",20,"""Aladin"""
 """Plaines""","""Étendues herbeuses, collines douces""","{""Centaure: 30"", ""Bison: 100""}",10,"""Le Grand Centaure"""
 """Jungle""","""Dense, humide, avec des rivières""","{""Jaguar: 20"", ""Serpent géant: 5"", ""Tribu indigène: 40""}",5,"""Aslan"""
