@@ -1,6 +1,6 @@
 public class Inventaire():
-    def __init__(self,livre,armure,arme,objet): #mettre un système % de chance
-        self.__livre=livre
-        self.__armure=armure
-        self.__arme=arme
-        self.__objet=objet
+    def __init__(self,livres,armures,armes,objets): #mettre un système % de chance
+        self.__livres=livres
+        self.__armures=armures
+        self.__armes=armes
+        self.__objets=objets
