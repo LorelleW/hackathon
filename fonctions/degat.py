@@ -3,44 +3,41 @@ from classes.joueur import Joueur
 from classes.creature import Creature
 import random as rd
 
+def degat_joueur(joueur, creature):
+  attaque_joueur = joueur.get_attaque()
+  attaque_arme_joueur = joueur.get_arme().get_attaque()
+  defense_creature = creature.get_defense()
+  defense_armure_creature = creature.get_armure().get_defense()
 
-def degat_joueur():
-  attaque_joueur=Joueur.get_attaque()
-  arme_joueur = Joueur.get_arme()  # Pas besoin de passer 'joueur' ici
-  attaque_arme_joueur = arme_joueur.get_attaque() #str nom arme 
-  return (attaque_joueur+attaque_arme_joueur)
+  return max(1, (attaque_joueur + attaque_arme_joueur) - (defense_creature + defense_armure_creature))
 
+def degat_creature(creature, joueur):
+  attaque_creature = creature.get_attaque()
+  attaque_arme_creature = creature.get_arme().get_attaque()
+  defense_joueur = joueur.get_defense()
+  defense_armure_joueur = joueur.get_armure().get_defense()
 
-def degat_creature():
-  attaque_creature=Creature.get_attaque()
-  arme_creature = Creature.get_arme()  # Pas besoin de passer 'joueur' ici
-  attaque_arme_creature=arme_creature.get_attaque()
-  defense_joueur=Joueur.get_defense()
-  armure_joueur=Joueur.get_armure()
-  defense_armure_joueur = armure_joueur.get_defense()
   chance = rd.randint(1,100)
   
-  if chance <=20: 
+  if chance <= 20: 
     return (0)
-  else:
-    return (attaque_creature+attaque_arme_creature - (defense_joueur + defense_armure_joueur))
+  return max(1, (attaque_creature + attaque_arme_creature) - (defense_joueur + defense_armure_joueur))
 
-
-def pv_actuel_joueur():
-  pv_joueur=Joueur.get_pv()
-  degat_creat=degat_creature()
-  pv_joueur -= degat_creat
-  Joueur.set_pv(pv_joueur)
-  if (pv_joueur>0):
-    return (pv_joueur)
+def creature_attaque_joueur(joueur, creature):
+  pv = joueur.get_pv()
+  degat = degat_creature(creature)
+  pv -= degat
+  joueur.set_pv(pv)
+  if (pv > 0):
+    return pv
   else:
     print("Tu es mort...")
 
 
-def pv_actuel_creature():
-  pv_creature=Creature.get_pv()
-  degat_joueur=degat_joueur()
-  pv_creature -= degat_joueur
-  Creature.set_pv(pv_creature)
-  if (pv_creature<=0):
+def joueur_attque_creature(creature, joueur):
+  pv= creature.get_pv()
+  degat = degat_joueur(joueur)
+  pv -= degat
+  Creature.set_pv(pv)
+  if (pv <= 0):
     print("Vous avez vaincu le monstre")
