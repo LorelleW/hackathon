@@ -50,4 +50,4 @@ class Armure():
     def set_etat(self,etat):
         self.__etat=etat
         
-nu = Armure(0, "G", 0, 0, 0, "nu")
+nu = Armure("nu", 0, "G", 0, 0, 0, "nu")
