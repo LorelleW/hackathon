@@ -1,5 +1,8 @@
+from classes.arme import *
+from classes.armure import *
+
 class Combattant(): 
-    def __init__(self,identite,race,classe,niv,pvmax,pv,attaque,defense,competence,arme,armure):
+    def __init__(self,identite,race,classe,niv,pvmax,pv,attaque,defense,competence,arme=poing,armure=nu):
         self.__identite = identite
         self.__race = race
         self.__classe = classe
