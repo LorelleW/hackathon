@@ -1,4 +1,4 @@
-class creature():
+public class creature():
     def __init__(self,nom:str,race:str,identite,classe,competences,statistiques,butin): #butin creer nouvelle class? 
         self.__nom=nom
         self.__race=race
