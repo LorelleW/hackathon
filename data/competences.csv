@@ -1,0 +1,8 @@
+nom,niveau,description,delai
+"Magie de feu",5,"Inflige des dégâts de feu sur une zone.",30
+"Furtivité",4,"Permet de se déplacer sans être détecté.",15
+"Soin",3,"Restaure des points de vie à un allié.",20
+"Tir précis",5,"Augmente la précision des attaques à distance.",25
+"Barrière magique",4,"Crée une protection temporaire contre les attaques.",40
+"Invocation de créature",6,"Fait appel à une créature pour aider au combat.",50
+"Renforcement",3,"Augmente temporairement les statistiques d'un allié.",30
