@@ -1,4 +1,4 @@
-public class livre():
+public class Livre():
     def __init__(self,nom:str,type7:str,prix:int,effets:str,rarete): 
         self.__nom=nom
         self.__type7=type7
