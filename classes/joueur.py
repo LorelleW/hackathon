@@ -1,4 +1,4 @@
-class joueur():
+public class joueur():
     def __init__(self,niv,pvmax,pv,attaque,defense,argent,identite,race,classe,inventaire,competences,arme,armure):
         self.__niv=niv
         self.__pvmax=pvmax
