@@ -1,16 +1,23 @@
 public class Armure():
-    def __init__(self,type5:str,restriction,defense,rarete,etat:str): 
+    def __init__(self,type5:str,restriction,defense,rarete,etat:str,prix:int): 
         self.__type5=type5 
         self.__restriction=restriction
         self.__defense=defense
         self.__rarete=rarete
         self.__etat=etat
+        self.__prix=prix
         
     def get_type5(self):
         return self.__type5
 
     def set_type5(self,type5):
         self.__type5=type5
+
+    def get_prix(self):
+        return self.__prix
+
+    def set_prix(self,prix):
+        self.__prix=prix
 
     def get_restriction(self):
         return self.__restriction
