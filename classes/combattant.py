@@ -1,5 +1,5 @@
 class Combattant(): 
-    def _init_(self,identite,race,classe,niv,pvmax,pv,attaque,defense,competence,arme,armure):
+    def __init__(self,identite,race,classe,niv,pvmax,pv,attaque,defense,competence,arme,armure):
         self.__identite = identite
         self.__race = race
         self.__classe = classe
