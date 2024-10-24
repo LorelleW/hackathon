@@ -50,4 +50,4 @@ print(f"{(Link.get_arme()).get_type()}")
 equiper_arme(Link, epee_bois)
 
 print(f"{(Link.get_arme()).get_type()}")
-
+print(inventaire_Link.get_armes().get_prix())
