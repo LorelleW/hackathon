@@ -1,5 +1,5 @@
 class Armure():
-    def __init__(self,self,defense=0,rarete="A",prix=1,etat=100,restriction=1,type='nu'): 
+    def __init__(self,defense=0,rarete="A",prix=1,etat=100,restriction=1,type='nu'): 
         self.__defense=defense
         self.__rarete=rarete
         self.__prix=prix
