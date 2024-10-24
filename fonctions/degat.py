@@ -3,11 +3,11 @@ from classes.arme import Arme
 from classes.joueur import Joueur
 from classes.creature import Creature
 
-attaque_joueur=joueur.get_attaque(self)
-attaque_arme_joueur=arme.get_attaque(joueur.arme) #str nom arme 
+attaque_joueur=Joueur.get_attaque(self)
+attaque_arme_joueur=Arme.get_attaque(Joueur.get_arme(self)) #str nom arme 
 
-attaque_creature=creature.get_attaque(self)
-attaque_arme_creature=arme.get_attaque(creature.arme)
+attaque_creature=Creature.get_attaque(self)
+attaque_arme_creature=Arme.get_attaque(Creature.get_arme(self))
 
 def degat_joueur():
   return (attaque_joueur+attaque_arme_joueur)
