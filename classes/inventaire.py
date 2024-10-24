@@ -90,3 +90,9 @@ class Inventaire():
         #else:
             #print(f"Aucun objet '{objet}' n'a été trouvé dans l'inventaire.")
 
+    def arme_in_inventaire(inventaire, arme):
+        armes = Inventaire.get_armes(inventaire)
+        for a in armes:
+            if (a == arme):
+                return True
+        return False
