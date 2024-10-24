@@ -1,0 +1,4 @@
+Inventaire,Argent,Bâtiment,Type,Propriétaire
+"""Épée, Bouclier, Potion""",1000,"""Forge""","""Armes""","""Théodore le Forgeron"""
+"""Armure, Casque, Cuirasse""",2000,"""Armurerie""","""Armures""","""Hélène la Guerrière"""
+"""Parchemin, Livre de sorts, Amulette""",1500,"""Magasin de magie""","""Magie""","""Merlin l'Enchanteur"""
