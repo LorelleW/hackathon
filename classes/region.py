@@ -33,8 +33,8 @@ class Region():
         self.__population=population
 
     def set_position(self,position):
-        return self.__position=position
+        self.__position=position
 
     def set_proprietaire(self,proprietaire):
-        return self.__proprietaire=proprietaire
+        self.__proprietaire=proprietaire
 
