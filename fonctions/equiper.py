@@ -3,27 +3,27 @@ from classes.inventaire import Inventaire
 from classes.arme import *
 
 def desequiper_arme(joueur):
-    arme = Joueur.get_arme(joueur)
+    arme = joueur.get_arme()
     if (arme != poing):
-        Inventaire.ajouter_arme(Joueur.get_inventaire(joueur), arme)
-        Joueur.set_arme(joueur, poing)
+        joueur.get_inventaire().ajouter_arme(arme)
+        joueur.set_arme(poing)
 
 def equiper_arme(joueur, arme):
-    inventaire = Joueur.get_inventaire(joueur)
-    if Inventaire.arme_in(inventaire, arme):
+    inventaire = joueur.get_inventaire()
+    if inventaire.arme_in(arme):
         desequiper_arme(joueur)
-        Inventaire.retirer_arme(inventaire, arme)
-        Joueur.set_arme(joueur, arme)
+        inventaire.retirer_arme(arme)
+        joueur.set_arme(arme)
 
 def desequiper_armure(joueur):
-    armure = Joueur.get_armure(joueur)
+    armure = joueur.get_armure()
     if (armure != poing):
-        Inventaire.ajouter_armure(Joueur.get_inventaire(joueur), armure)
-        Joueur.set_armure(joueur, poing)
+        joueur.get_inventaire().ajouter_armure(armure)
+        joueur.set_armure(poing)
 
 def equiper_armure(joueur, armure):
-    inventaire = Joueur.get_inventaire(joueur)
-    if Inventaire.armure_in(inventaire, armure):
+    inventaire = joueur.get_inventaire()
+    if inventaire.armure_in(armure):
         desequiper_armure(joueur)
-        Inventaire.retirer_armure(inventaire, armure)
-        Joueur.set_armure(joueur, armure)
+        inventaire.retirer_armure(armure)
+        joueur.set_armure(armure)
