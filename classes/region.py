@@ -1,6 +1,6 @@
 class Region():
     def __init__(self,typedelieu,topographie,population,position,proprietaire:str):
-        #Population est maintenant un dictionnaire {nom_creature: nombre_individus}
+        #Population est un dictionnaire {nom_creature: nombre_individus}
         self.__typedelieu=typedelieu
         self.__topographie=topographie
         self.__population=population
