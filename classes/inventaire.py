@@ -1,5 +1,6 @@
 class Inventaire():
     def __init__(self,livres,armures,armes,objets): #mettre un système % de chance
+        #Les attributs de la classe sont des listes (de chaines de caractères)  
         self.__livres=livres
         self.__armures=armures
         self.__armes=armes
