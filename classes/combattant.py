@@ -1,14 +1,19 @@
 public class Combattant(): 
-    def _init_(self,race,niv,pvmax,pv,attaque,defense,argent,classe,competence,statistique,identite):
+    def _init_(self,identite,race,classe,niv,pvmax,pv,attaque,defense,competence):
+        self.__identite = identite
         self.__race = race
         self.__classe = classe
-        self.__competence = competence
         self.__niv=niv
         self.__pvmax=pvmax
         self.__pv=pv
         self.__attaque=attaque
         self.__defense=defense
-        self.__argent=argent
+        self.__competence = competence
+
+    def get_identite(self):
+        return self.__identite
+
+    def set_identite(self, identite):
         self.__identite = identite
     
     def get_race(self):
@@ -23,11 +28,6 @@ public class Combattant():
     def set_classe(self, classe):
         self.__classe = classe
 
-    def get_competence(self):
-        return self.__competence
-
-    def set_competence(self, competence):
-        self.__competence = competence
 
     def get_niv(self):
         return self.__niv
@@ -59,16 +59,11 @@ public class Combattant():
     def set_defense(self, defense):
         self.__defense = defense
 
-    def get_argent(self):
-        return self.__argent
+    def get_competence(self):
+        return self.__competence
 
-    def set_argent(self, argent):
-        self.__argent = argent
+    def set_competence(self, competence):
+        self.__competence = competence
 
-    def get_identite(self):
-        return self.__identite
-
-    def set_identite(self, identite):
-        self.__identite = identite
 
  
