@@ -1,10 +1,9 @@
 class Pnj():
-    def __init__(self,identite,metier:str,statistiques,inventaire,avisdujoueur): 
+    def __init__(self,identite,metier:str,statistiques,inventaire): 
         self.__identite=identite
         self.__metier=metier
         self.__statistiques=statistiques
         self.__inventaire=inventaire
-        self.__avisdujoueur=avisdujoueur
 
 
     def get_identite(self):
@@ -30,9 +29,3 @@ class Pnj():
 
     def set_inventaire(self,inventaire):
         self.__inventaire=inventaire
-
-    def get_avisdujoueur(self):
-        return self.__avisdujoueur
-
-    def set_avisdujoueur(self,avisdujoueur):
-        self.__avisdujoueur=avisdujoueur
