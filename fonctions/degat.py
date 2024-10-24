@@ -32,7 +32,7 @@ def creature_attaque_joueur(joueur, creature):
   else:
     print("Tu es mort...")
 
-def joueur_attque_creature(creature, joueur):
+def joueur_attaque_creature(creature, joueur):
   pv = creature.get_pv()
   degat = degat_joueur(joueur, creature)
   pv -= degat
