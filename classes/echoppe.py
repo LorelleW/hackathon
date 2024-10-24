@@ -1,4 +1,4 @@
-class echoppe():
+public class echoppe():
     def __init__(self,inventaire,argent,batiment:str,type6:str,proprietaire:str): 
         self.__inventaire=inventaire 
         self.__argent=argent
