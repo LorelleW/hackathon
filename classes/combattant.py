@@ -1,4 +1,4 @@
-public class guerrier(): 
+public class combattant(): 
     def _init_(self,race,niv,pvmax,pv,attaque,defense,argent,classe,competence,statistique,identite):
         self.__race = race
         self.__classe = classe
