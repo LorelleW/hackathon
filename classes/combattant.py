@@ -84,4 +84,16 @@ class Combattant():
     def set_armure(self, armure):
         self.__armure = armure
 
- 
+    def ajouter_competence(self, nouvelle_competence):
+        if nouvelle_competence not in self.__competence:
+            self.__competence.append(nouvelle_competence)
+            print(f"Compétence '{nouvelle_competence}' ajoutée.")
+        else:
+            print(f"Compétence '{nouvelle_competence}' est déjà présente.")
+
+    def supprimer_competence(self, competence_a_supprimer):
+        if competence_a_supprimer in self.__competence:
+            self.__competence.remove(competence_a_supprimer)
+            print(f"Compétence '{competence_a_supprimer}' supprimée.")
+        else:
+            print(f"Compétence '{competence_a_supprimer}' n'existe pas dans la liste.")
