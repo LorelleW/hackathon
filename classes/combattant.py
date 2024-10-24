@@ -10,3 +10,65 @@ public class Combattant():
         self.__defense=defense
         self.__argent=argent
         self.__identite = identite
+    
+    def get_race(self):
+        return self.__race
+
+    def set_race(self,race):
+        self.__race = race
+
+    def get_classe(self):
+        return self.__classe
+
+    def set_classe(self, classe):
+        self.__classe = classe
+
+    def get_competence(self):
+        return self.__competence
+
+    def set_competence(self, competence):
+        self.__competence = competence
+
+    def get_niv(self):
+        return self.__niv
+
+    def set_niv(self, niv):
+        self.__niv = niv
+
+    def get_pvmax(self):
+        return self.__pvmax
+
+    def set_pvmax(self, pvmax):
+        self.__pvmax = pvmax
+
+    def get_pv(self):
+        return self.__pv
+
+    def set_pv(self, pv):
+        self.__pv = pv
+
+    def get_attaque(self):
+        return self.__attaque
+
+    def set_attaque(self, attaque):
+        self.__attaque = attaque
+
+    def get_defense(self):
+        return self.__defense
+
+    def set_defense(self, defense):
+        self.__defense = defense
+
+    def get_argent(self):
+        return self.__argent
+
+    def set_argent(self, argent):
+        self.__argent = argent
+
+    def get_identite(self):
+        return self.__identite
+
+    def set_identite(self, identite):
+        self.__identite = identite
+
+ 
