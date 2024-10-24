@@ -3,6 +3,7 @@ from classes.joueur import Joueur
 from classes.creature import Creature
 import random as rd
 
+
 def degat_joueur():
   attaque_joueur=Joueur.get_attaque()
   arme_joueur = Joueur.get_arme()  # Pas besoin de passer 'joueur' ici
@@ -15,6 +16,7 @@ def degat_joueur():
   else:
     return (attaque_joueur+attaque_arme_joueur)
 
+
 def degat_creature():
   attaque_creature=Creature.get_attaque()
   arme_creature = Creature.get_arme()  # Pas besoin de passer 'joueur' ici
@@ -23,6 +25,7 @@ def degat_creature():
   armure_joueur=Joueur.get_armure()
   defense_armure_joueur = armure_joueur.get_defense()
   return (attaque_creature+attaque_arme_creature - (defense_joueur + defense_armure_joueur))
+
 
 def pv_actuel_joueur():
   pv_joueur=Joueur.get_pv()
@@ -33,6 +36,7 @@ def pv_actuel_joueur():
     return (pv_joueur)
   else:
     print("Tu es mort...")
+
 
 def pv_actuel_creature():
   pv_creature=Creature.get_pv()
