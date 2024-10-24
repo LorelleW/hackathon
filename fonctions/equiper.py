@@ -12,7 +12,7 @@ def arme_in_inventaire(inventaire, arme):
 def desequiper_arme(joueur):
     arme = Joueur.get_arme(joueur)
     if (arme != poing):
-        Inventaire.ajouter_arme(Joueur.get_inventaire(joueur))
+        Inventaire.ajouter_arme(Joueur.get_inventaire(joueur), arme)
         Joueur.set_arme(joueur, poing)
 
 def equiper_arme(joueur, arme):
