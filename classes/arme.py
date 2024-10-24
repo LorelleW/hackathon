@@ -1,4 +1,4 @@
-public class Arme():
+class Arme():
     def __init__(self,type4='poing':str,restriction,attaque=0:int,rarete,etat:str,prix:str): 
         self.__type4=type4
         self.__restriction=restriction
