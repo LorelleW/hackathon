@@ -48,6 +48,23 @@ force = Competence("force", 1, "attaque * 1.5", 5)
 inventaire_Link = Inventaire([], [], [], [])
 butin_slime = Butin([], [], [], [gelee], 1)
 
+
+print(butin_slime.get_objet())
+
+print("Inventaire Armure")
+inventaire_Link.ajouter_armure(armure_fer)
+print(inventaire_Link.get_armures())
+print("Porte feuille avant")
+print(Link.get_argent())
+print("prix de l'armure de Link")
+print(Link.get_armure().get_prix())
+print("On vend l'armure")
+vendre_armes(armure_bois,Link)
+print("Porte feuille après")
+print(Link.get_argent())
+
+print(Link.get_inventaire().get_armures())
+
 Link = Joueur("Link", humain, epeiste, 1, 100, 100, 10, 5, [force], 10, inventaire_Link, epee_bois, armure_bois)
 
 slime1 = Creature("slime_vert", slime, epeiste, 1, 50, 50, 5, 0, [], poing, nu, butin_slime)
