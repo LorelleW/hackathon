@@ -1,5 +1,5 @@
 class Combattant(): 
-    def _init_(self,identite,race,classe,niv,pvmax,pv,attaque,defense,competence):
+    def _init_(self,identite,race,classe,niv,pvmax,pv,attaque,defense,competence,arme,armure):
         self.__identite = identite
         self.__race = race
         self.__classe = classe
@@ -9,6 +9,8 @@ class Combattant():
         self.__attaque=attaque
         self.__defense=defense
         self.__competence = competence
+        self.__arme=arme
+        self.__armure=armure
 
     def get_identite(self):
         return self.__identite
@@ -65,5 +67,18 @@ class Combattant():
     def set_competence(self, competence):
         self.__competence = competence
 
+    # Getter et Setter pour arme
+    def get_arme(self):
+        return self.__arme
+
+    def set_arme(self, arme):
+        self.__arme = arme
+
+    # Getter et Setter pour armure
+    def get_armure(self):
+        return self.__armure
+
+    def set_armure(self, armure):
+        self.__armure = armure
 
  
