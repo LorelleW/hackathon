@@ -104,7 +104,13 @@ Effets
 	*nom
 	 description
 
-attaquer()
-vente()
+combattre(creature)
+vendre(vendeur,acheteur,objet,prix)
 aller()
-equiper()
+equiper(arme/armure)
+desequiper(arme/armure)
+jeter(objet)
+apprendre(competence)
+dialoguer(pnj)
+donner(pnj,objet)
+
