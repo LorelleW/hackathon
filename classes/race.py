@@ -3,7 +3,7 @@ class Race():
         self.__nom=nom 
         self.__region=region 
         self.__rarete=rarete #S ou A ou B ou C ou D avec S>A>B>C>D
-        self.__reputation=reputation #?
+        self.__reputation=reputation #entier entre 1 et 100, 100 étant la meilleure réputation
 #getter
     def get_nom(self):
         return self.__nom
