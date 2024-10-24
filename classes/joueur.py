@@ -24,16 +24,6 @@ class Joueur(Combattant):
     def set_inventaire(self, inventaire):
         self.__inventaire = inventaire
 
-    # Getter et Setter pour arme
-    def get_arme(self):
-        return self.__arme
-
-    def set_arme(self, arme):
-        self.__arme = arme
-
-    # Getter et Setter pour armure
-    def get_armure(self):
-        return self.__armure
 
     def set_armure(self, armure):
         self.__armure = armure
