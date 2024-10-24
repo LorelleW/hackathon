@@ -1,11 +1,11 @@
 public class Livre():
-    def __init__(self,nom:str,type7:str,prix:int,effets:str,rarete): 
+    def __init__(self,nom:str,type7:str,prix:int,effets:str,rarete,prix): 
         self.__nom=nom
         self.__type7=type7
         self.__prix=prix
         self.__effets=effets
         self.__rarete=rarete
-
+        self.__prix=prix
 
 # Getter et Setter pour nom
     def get_nom(self):
@@ -13,6 +13,12 @@ public class Livre():
 
     def set_nom(self, nom):
         self.__nom = nom
+
+    def get_prix(self):
+        return self.__prix
+    
+    def set_prix(self, prix):
+        self.__prix = prix
 
     # Getter et Setter pour type7
     def get_type7(self):
