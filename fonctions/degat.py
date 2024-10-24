@@ -8,7 +8,6 @@ def degat_joueur(joueur, creature):
   attaque_arme_joueur = joueur.get_arme().get_attaque()
   defense_creature = creature.get_defense()
   defense_armure_creature = creature.get_armure().get_defense()
-
   return max(1, (attaque_joueur + attaque_arme_joueur) - (defense_creature + defense_armure_creature))
 
 def degat_creature(creature, joueur):
@@ -34,9 +33,9 @@ def creature_attaque_joueur(joueur, creature):
     print("Tu es mort...")
 
 def joueur_attque_creature(creature, joueur):
-  pv= creature.get_pv()
+  pv = creature.get_pv()
   degat = degat_joueur(joueur, creature)
   pv -= degat
-  Creature.set_pv(pv)
+  creature.set_pv(pv)
   if (pv <= 0):
     print("Vous avez vaincu le monstre")
