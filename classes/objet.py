@@ -1,4 +1,4 @@
-public class Objet():
+class Objet():
     def __init__(self,nom:str,type3:str,prix:int,materiaux:str,rarete:str): 
         self.__nom=nom 
         self.__type3=type3
