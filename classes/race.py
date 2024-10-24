@@ -2,7 +2,7 @@ class Race():
     def __init__(self,nom:str,region,rarete,reputation):
         self.__nom=nom 
         self.__region=region 
-        self.__rarete=rarete #int? str?
+        self.__rarete=rarete #S ou A ou B ou C ou D avec S>A>B>C>D
         self.__reputation=reputation #?
 #getter
     def get_nom(self):
