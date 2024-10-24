@@ -5,8 +5,6 @@ class Joueur(Combattant):
         super().__init__(identite,race,classe,niv,pvmax,pv,attaque,defense,competence,arme,armure)
         self.__argent=argent
         self.__inventaire=inventaire
-        self.__arme=arme
-        self.__armure=armure
 
 
     # Getter et Setter pour argent
