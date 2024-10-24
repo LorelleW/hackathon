@@ -50,4 +50,4 @@ class Arme():
     def set_etat(self,etat):
         self.__etat = etat 
 
-poing = Arme(0, "G", 0, 0, 0, "poing")
+poing = Arme("poing", 0, "G", 0, 0, 0, "poing")
