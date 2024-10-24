@@ -24,7 +24,3 @@ class Joueur(Combattant):
     def set_inventaire(self, inventaire):
         self.__inventaire = inventaire
 
-
-    def set_armure(self, armure):
-        self.__armure = armure
-
