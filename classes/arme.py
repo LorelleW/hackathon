@@ -1,5 +1,5 @@
 public class Arme():
-    def __init__(self,type4='arme':str,restriction,attaque,rarete,etat:str): 
+    def __init__(self,type4='poing':str,restriction,attaque=0:int,rarete,etat:str): 
         self.__type4=type4
         self.__restriction=restriction
         self.__attaque=attaque
