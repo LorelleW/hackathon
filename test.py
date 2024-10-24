@@ -45,7 +45,8 @@ epee_bois = Arme(5, "F", 1, 100, 1, "epee")
 
 armure_bois = Armure(5, "F", 1, 99, 1, "haut")
 
-Zelda = Pnj("Zelda", "civil", 18, [couronne], 50)
+inventaire_Zelda = Inventaire([],[],[],[couronne])
+Zelda = Pnj("Zelda", "civil", 18, inventaire_Zelda, 50)
 
 force = Competence("force", 1, "attaque * 1.5", 5)
 
