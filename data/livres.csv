@@ -1,0 +1,6 @@
+Nom,Type,Prix,Effets,Rarete
+"""Grimoire des Arcanes""","""Magie""",100,"""Permet d'apprendre des sorts avancés.""","""S"""
+"""Tome de Bataille""","""Combat""",75,"""Augmente les capacités de combat du lecteur.""","""A"""
+"""Manuel de l'Alchimiste""","""Alchimie""",50,"""Enseigne des recettes d'alchimie avancées.""","""B"""
+"""Chroniques du Roi""","""Histoire""",60,"""Relate les histoires des anciens rois.""","""C"""
+"""Livre des Ténèbres""","""Magie Noire""",120,"""Confère des pouvoirs occultes.""","""S"""
