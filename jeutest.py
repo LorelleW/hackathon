@@ -330,24 +330,24 @@ while en_jeu:
             fond_image = pygame.image.load(liste_region[5]).convert()
             fond_image = pygame.transform.scale(fond_image, (largeur_fenetre, hauteur_fenetre)) 
         if nombre_de_scene>10:
-            def show_end_screen():
-                while True:  # Boucle infinie jusqu'à ce que l'utilisateur décide de quitter ou de rejouer
-                    fenetre.fill(BLANC)  # Remplir l'écran avec la couleur noire
+            #def show_end_screen():
+                #while True:  # Boucle infinie jusqu'à ce que l'utilisateur décide de quitter ou de rejouer
+                    #fenetre.fill(BLANC)  # Remplir l'écran avec la couleur noire
                     
                     # Texte de fin
-                    text = font.render("Merci d'avoir joué !", True, NOIR)
-                    text_rect = text.get_rect(center=(largeur_fenetre // 2, hauteur_fenetre // 3))
-                    fenetre.blit(text, text_rect)
+                    # text = font.render("Merci d'avoir joué !", True, NOIR)
+                    #text_rect = text.get_rect(center=(largeur_fenetre // 2, hauteur_fenetre // 3))
+                    #fenetre.blit(text, text_rect)
 
-                    for event in pygame.event.get():
-                        if event.type == pygame.QUIT:
-                            pygame.quit()
-                            sys.exit()  # Quitter le jeu
+                    #for event in pygame.event.get():
+                    #    if event.type == pygame.QUIT:
+                    #        pygame.quit()
+                    #        sys.exit()  # Quitter le jeu
 
                         
 
-                    pygame.display.flip()  # Mettre à jour l'affichage
-            show_end_screen()
+                    #pygame.display.flip()  # Mettre à jour l'affichage
+            #show_end_screen()
             pygame.quit()
 
     # Générer un monstre
