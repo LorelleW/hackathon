@@ -329,7 +329,7 @@ while en_jeu:
         if nombre_de_scene==10:
             fond_image = pygame.image.load(liste_region[5]).convert()
             fond_image = pygame.transform.scale(fond_image, (largeur_fenetre, hauteur_fenetre)) 
-         if nombre_de_scene>10:
+        if nombre_de_scene>10:
             def show_end_screen():
                 while True:  # Boucle infinie jusqu'à ce que l'utilisateur décide de quitter ou de rejouer
                     fenetre.fill(BLANC)  # Remplir l'écran avec la couleur noire
