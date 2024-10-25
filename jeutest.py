@@ -207,6 +207,7 @@ def bouton(texte, x, y, action=None):
 
     # Vérifier si la souris est sur le bouton et si on clique
     pygame.draw.rect(fenetre, BLANC, (x, y, 150, 40))  # Dessiner le bouton en blanc
+    pygame.draw.rect(fenetre, NOIR, (x, y, 150, 40), 2)
     fenetre.blit(text_surface, rect.topleft)  # Afficher le texte sur le bouton
 
     souris = pygame.mouse.get_pos()  # Obtenir la position de la souris
@@ -349,17 +350,17 @@ while en_jeu:
         afficher_stats_creature(Slimy)  # Afficher les stats du monstre
 
         # Calculer les positions pour centrer les boutons
-        bouton_attaque_x = (largeur_fenetre // 2) - (150 // 2)
-        bouton_attaque_y = (hauteur_fenetre // 2) - (40 // 2)
-        bouton_competence_x = (largeur_fenetre // 2) - (150 // 2)
-        bouton_competence_y = (hauteur_fenetre // 2) - 40
-        bouton_fuir_x = (largeur_fenetre // 2) - (150 // 2)
-        bouton_fuir_y = bouton_attaque_y + 50  # Espace entre les boutons
+        bouton_attaque_x = (largeur_fenetre // 2-160)
+        bouton_attaque_y = (hauteur_fenetre // 2+290)
+        bouton_fuir_x = (largeur_fenetre // 2+10)
+        bouton_fuir_y = bouton_attaque_y 
+        
+        # Espace entre les boutons
 
         # Afficher les boutons "Attaquer" et "Fuir"
         bouton("Attaquer", bouton_attaque_x, bouton_attaque_y, aux)
-        bouton(Link.get_competence()[0].get_nom(), bouton_competence_x, bouton_competence_y, aux_competence)
         bouton("Fuir", bouton_fuir_x, bouton_fuir_y, fuir)
+
 
     # Rafraîchir l'écran
     pygame.display.flip()
