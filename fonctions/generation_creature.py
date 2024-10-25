@@ -67,11 +67,6 @@ def generer_loup(niv):
 
 
 def generer_dragon(niv):
-    # Générer un nombre aléatoire pour déterminer si le dragon sera créé
-    prob = rd.random()
-    if prob > 0.1:  # Seul 10% de chance de générer un dragon
-        return None  # Aucun dragon n'est généré
-
     # Création des instances de base pour le dragon
     Montagne_dragon = Region("montagne", 50, {}, 100, "Ancien dragon")
     dragon_race = Race("dragon", Montagne_dragon, "S", 100)
