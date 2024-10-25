@@ -1,5 +1,30 @@
 import pygame
-import random
+import random as rd
+
+import random as rd
+from classes.competence import Competence
+from classes.magie import Magie
+from classes.race import Race
+from classes.classe import Classe
+from classes.region import Region
+from classes.objet import Objet
+from classes.arme import *
+from classes.armure import *
+from classes.livre import Livre
+from classes.inventaire import Inventaire
+from classes.combattant import Combattant    
+from classes.joueur import Joueur
+from classes.butin import Butin
+from classes.creature import Creature
+from classes.pnj import Pnj
+from classes.batiment import Batiment
+from classes.echoppe import Echoppe
+from classes.effets import Effets
+from fonctions.degat import *
+from fonctions.equiper import *
+from fonctions.marchand import *
+from fonctions.combat import *
+from fonctions.generation_creature import *
 
 # Initialisation de Pygame
 pygame.init()
@@ -7,7 +32,7 @@ pygame.init()
 # Configuration de la fenêtre de jeu
 largeur_fenetre, hauteur_fenetre = 800, 600
 fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
-pygame.display.set_caption("RPG avec Pygame")
+pygame.display.set_caption("Jeu ")
 
 # Définition des couleurs
 BLANC = (255, 255, 255)
@@ -15,15 +40,15 @@ NOIR = (0, 0, 0)
 TRANSPARENT_NOIR = (0, 0, 0, 180)  # Noir plus transparent
 
 # Chargement du paysage
-fond_image = pygame.image.load("foret.png").convert()
+fond_image = pygame.image.load("interface/foret.png").convert()
 fond_image = pygame.transform.scale(fond_image, (largeur_fenetre, hauteur_fenetre))  # Redimensionne l'image au format de la fenêtre
 
 # Chargement d'images du personnage
-personnage_image = pygame.image.load("personnage.png").convert_alpha()  # Charge avec transparence si image PNG
+personnage_image = pygame.image.load("interface/personnage.png").convert_alpha()  # Charge avec transparence si image PNG
 personnage_rect = personnage_image.get_rect(center=(100, 300))  # On place le personnage au départ, à gauche
 
 # Chargement de l'image du monstre
-monstre_image = pygame.image.load("monstre.png").convert_alpha()  # Remplace par l'image de ton monstre
+monstre_image = pygame.image.load("interface/monstre.png").convert_alpha()  # Remplace par l'image de ton monstre
 monstre_image = pygame.transform.scale(monstre_image, (personnage_image.get_width(), personnage_image.get_height()))  # Mise à l'échelle
 monstre_rect = None  # Rectangle du monstre (sera défini lors de l'apparition)
 
@@ -88,7 +113,7 @@ def afficher_stats_monstre():
 # Fonction pour augmenter la distance parcourue
 def avancer():
     global distance_parcourue
-    distance_parcourue += random.randint(1, 5)
+    distance_parcourue += rd.randint(1, 5)
 
 # Fonction pour créer et gérer les boutons
 def bouton(texte, x, y, action=None):
