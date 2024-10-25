@@ -28,10 +28,9 @@ def creature_attaque_joueur(joueur, creature):
   pv -= degat
   print(f"{creature.get_nom()} inflige {degat} à {joueur.get_nom()}")
   joueur.set_pv(pv)
-  if (pv > 0):
-    return pv
-  else:
+  if (pv <= 0):
     print("Tu es mort...")
+  return degat
 
 def joueur_attaque_creature(creature, joueur):
   pv = creature.get_pv()
@@ -41,3 +40,4 @@ def joueur_attaque_creature(creature, joueur):
   creature.set_pv(pv)
   if (pv <= 0):
     print("Vous avez vaincu le monstre")
+  return degat
