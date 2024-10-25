@@ -83,7 +83,7 @@ def generer_dragon(niv):
 
     # Caractéristiques du dragon
     exp = niv * (niv -1)  # Grande quantité d'XP
-    dragon_creature = Creature(nom, dragon_race, dragon_classe, niv, 0, 500, 500, 100, 80, ["souffle de feu"], poing, nu, butin_dragon)
+    dragon_creature = Creature(nom, dragon_race, dragon_classe, 1, 0, 100, 100, 30, 0, ["souffle de feu"], poing, nu, butin_dragon)
 
     # Ajouter de l'expérience à la créature dragon
     dragon_creature.add_exp(exp)
