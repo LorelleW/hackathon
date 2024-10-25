@@ -26,6 +26,8 @@ from fonctions.marchand import *
 from fonctions.combat import *
 from fonctions.generation_creature import *
 
+#------------------------------------------------------------------------------------------------
+
 Neant = Region("autre", 100, {}, 999, "Divinite_inconnue")
 
 humain = Race("humain", Neant, "D", 50)
@@ -53,10 +55,7 @@ butin_slime = Butin([], [], [], [gelee], 1)
 
 Link = Joueur("Link", humain, epeiste, 1, 0, 100, 100, 10, 5, [force], 10, inventaire_Link, epee_bois, armure_bois)
 
-
-
-
-
+#------------------------------------------------------------------------------------------------
 
 # Initialisation de Pygame
 pygame.init()
@@ -66,6 +65,12 @@ largeur_fenetre, hauteur_fenetre = 1500, 800
 fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
 pygame.display.set_caption("Jeu ")
 liste_region=["interface/foret.png", "interface/montagne.png","interface/desert.png","interface/plage.png","interface/espace.png","interface/train_dernier_boss.png"]
+
+# Variables pour l'inventaire et l'état d'affichage
+inventaire_ouvert = False
+zone_inventaire_rect = pygame.Rect(250, 100, 1050, 600)  # Zone blanche pour l'inventaire
+selection = False
+selectione = gelee
 
 # Définition des couleurs
 BLANC = (255, 255, 255)
@@ -82,9 +87,13 @@ personnage_image = pygame.image.load("interface/personnage.png").convert_alpha()
 personnage_rect = personnage_image.get_rect(center=(100, 450))  # On place le personnage au départ, à gauche
 
 # Chargement de l'image du monstre
-monstre_image = pygame.image.load("interface/monstre.png").convert_alpha()  # Remplace par l'image de ton monstre
-monstre_image = pygame.transform.scale(monstre_image, (personnage_image.get_width(), personnage_image.get_height()))  # Mise à l'échelle
-monstre_rect = None  # Rectangle du monstre (sera défini lors de l'apparition)
+slime_image = pygame.image.load("interface/slime.png").convert_alpha()  # Remplace par l'image de ton monstre
+slime_image = pygame.transform.scale(slime_image, (personnage_image.get_width(), personnage_image.get_height()))  # Mise à l'échelle
+slime_rect = None  # Rectangle du monstre (sera défini lors de l'apparition)
+loup_image = pygame.image.load("interface/loup.png").convert_alpha()  # Remplace par l'image de ton monstre
+loup_image = pygame.transform.scale(loup_image, (personnage_image.get_width(), personnage_image.get_height()))  # Mise à l'échelle
+loup_rect = None  # Rectangle du monstre (sera défini lors de l'apparition)
+monstre_image = slime_image
 
 # Variables du joueur
 distance_parcourue = 0
@@ -94,6 +103,45 @@ monstre_apparu = False  # Indique si un monstre est présent
 
 distance_monstre = rd.randint(50, 300)
 
+def toggle_inventaire():
+    global inventaire_ouvert
+    inventaire_ouvert = not inventaire_ouvert
+
+def rien():
+    return 0
+
+# Fonction pour afficher l'inventaire du joueur dans la zone blanche
+def afficher_inventaire(joueur):
+    pygame.draw.rect(fenetre, (255, 255, 255), zone_inventaire_rect)  # Zone blanche
+
+    # Afficher un bouton pour fermer l'inventaire
+    bouton("Fermer", zone_inventaire_rect.right - 100, zone_inventaire_rect.top + 20, toggle_inventaire)
+
+    categories = ["Livres", "Armures", "Armes", "Objets"]
+    positions_y = {category: zone_inventaire_rect.top + 60 + i * 150 for i, category in enumerate(categories)}
+
+    # Récupère les listes d'éléments dans chaque catégorie
+    elements_inventaire = {
+        "Livres": joueur.get_inventaire().get_livres(),
+        "Armures": joueur.get_inventaire().get_armures(),
+        "Armes": joueur.get_inventaire().get_armes(),
+        "Objets": joueur.get_inventaire().get_objets()
+    }
+
+    # Parcourir chaque catégorie
+    for category, elements in elements_inventaire.items():
+        y = positions_y[category]
+        font = pygame.font.Font(None, 28)
+        title_surface = font.render(category, True, NOIR)
+        fenetre.blit(title_surface, (zone_inventaire_rect.left + 20, y))
+
+        # Affiche les boutons pour chaque élément dans la catégorie
+        for i, element in enumerate(elements[:10]):  # Affiche jusqu'à 10 éléments
+            bouton_x = zone_inventaire_rect.left + 20 + (i % 5) * 160  # Colonnes de 5 éléments
+            bouton_y = y + 40 + (i // 5) * 50  # Espacement entre lignes
+            bouton(element.get_nom(), bouton_x, bouton_y, rien)
+
+
 # Fonction pour afficher les stats
 def afficher_stats_joueur(joueur):
     font = pygame.font.Font(None, 28)
@@ -101,9 +149,9 @@ def afficher_stats_joueur(joueur):
     stats_joueur = [
         f"Nom: {joueur.get_nom()}",
         f"PV: {joueur.get_pv()}/{Link.get_pvmax()}",
-        f"Attaque: {joueur.get_attaque()}",
-        f"Defense: {joueur.get_defense()}",
-        f"Niveau: {joueur.get_niv()}: {joueur.get_exp()}/{joueur.get_niv() * 2}",
+        f"Attaque: {joueur.get_attaque()} (+{joueur.get_arme().get_attaque()})",
+        f"Defense: {joueur.get_defense()} (+{joueur.get_armure().get_defense()})",
+        f"Niveau: {joueur.get_niv()} ({joueur.get_exp()}/{joueur.get_niv() * 2})",
         f"Argent: {joueur.get_argent()}",
         f"Arme: {joueur.get_arme().get_nom()}",
         f"Armure: {joueur.get_armure().get_nom()}",
@@ -126,8 +174,8 @@ def afficher_stats_creature(creature):
     stats_creature = [
         f"Nom: {creature.get_nom()}",
         f"PV: {creature.get_pv()}/{creature.get_pvmax()}",
-        f"Attaque: {creature.get_attaque()}",
-        f"Defense: {creature.get_defense()}",
+        f"Attaque: {creature.get_attaque()} (+{creature.get_arme().get_attaque()})",
+        f"Defense: {creature.get_defense()} (+{creature.get_armure().get_defense()})",
         f"Niveau: {creature.get_niv()}",
         f"Argent: {creature.get_butin().get_argent()}",
         f"Arme: {creature.get_arme().get_nom()}",
@@ -169,13 +217,12 @@ def bouton(texte, x, y, action=None):
 
 # Exemple de fonction à lier aux boutons
 def attaquer(joueur, creature):
-    global monstre_apparu, en_jeu, degat_joueur,degat_creature
+    global monstre_apparu, en_jeu
 
     print(f"{joueur.get_nom()}({joueur.get_pv()}/{joueur.get_pvmax()})")
     print(f"{creature.get_nom()}({creature.get_pv()}/{creature.get_pvmax()})")
-    degat_joueur=joueur_attaque_creature(creature, joueur)
-    #rajouter ici la box damage!!
-    degat_creature=creature_attaque_joueur(joueur, creature)
+    joueur_attaque_creature(creature, joueur)
+    creature_attaque_joueur(joueur, creature)
 
     if creature.get_pv() <= 0:
         gagner(joueur, creature)
@@ -193,14 +240,18 @@ def fuir():
 
 # Fonction pour générer un monstre
 def generer_monstre():
-    global monstre_apparu, monstre_rect, distance_monstre
+    global monstre_apparu, monstre_rect, distance_monstre, monstre_image
 
     monstre_apparu = True
     monstre_rect = monstre_image.get_rect(center=(personnage_rect.right + 50, personnage_rect.centery))  # Juste devant le personnage
     distance_monstre += rd.randint(50, 300)
 
-    return generer_slime(rd.randint(min(1, Link.get_niv()-2), Link.get_niv()+2))
-    
+    if rd.randint(1, 100) > 30:
+        monstre_image = slime_image
+        return generer_slime(rd.randint(min(1, Link.get_niv()-2), Link.get_niv()+2))
+    monstre_image = loup_image
+    return generer_loup(rd.randint(min(1, Link.get_niv()-2), Link.get_niv()+2))
+
 # Boucle du jeu
 clock = pygame.time.Clock()
 en_jeu = True
@@ -213,20 +264,21 @@ def aux():
     attaquer(Link, Slimy)
     time.sleep(0.2)
 
+#------------------------------------------------------------------------------------------------
+
 while en_jeu:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             en_jeu = False
-
+    
     # Gestion des touches (déplacement uniquement vers la droite)
     touches = pygame.key.get_pressed()
     
     # Empêcher le mouvement si un monstre est présent
-    if not monstre_apparu and touches[pygame.K_RIGHT]:
+    if not monstre_apparu and touches[pygame.K_RIGHT] and not inventaire_ouvert:
         personnage_rect.x += 5  # Déplacement vers la droite
         avancer()  # Augmenter la distance
 
-        # Vérifier si le personnage sort de l'écran
         # Vérifier si le personnage sort de l'écran
         if personnage_rect.x > largeur_fenetre:
             personnage_rect.x = 0  # Remettre le personnage au point de départ (à gauche)
@@ -257,6 +309,14 @@ while en_jeu:
     # Affichage du personnage
     fenetre.blit(personnage_image, personnage_rect)
 
+    # Afficher le bouton pour ouvrir l'inventaire
+    bouton("Inventaire", largeur_fenetre - 160, 100, toggle_inventaire)
+
+    # Afficher l'inventaire si ouvert
+    if inventaire_ouvert:
+        afficher_inventaire(Link)  # Afficher les éléments de l'inventaire
+        time.sleep(0.1)
+
     # Affichage des stats du monstre et de l'image du monstre si un monstre est présent
     if monstre_apparu and monstre_rect is not None:
         fenetre.blit(monstre_image, monstre_rect)  # Afficher le monstre
@@ -278,3 +338,4 @@ while en_jeu:
 
 # Quitter Pygame
 pygame.quit()
+
