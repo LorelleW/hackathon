@@ -42,7 +42,7 @@ def generer_loup(niv):
     guerrier = Classe("guerrier", "armure légère", "agressif")
     fourrure = Objet("fourrure", "ressource", 15, "organique", "C")
     croc = Objet("croc de loup", "ressource", 5, "organique", "C")
-    butin_loup = Butin([], [], [croc], [fourrure], 10)
+    butin_loup = Butin([], [], [], [fourrure,croc], 10)
     noms = ["loup noir", "loup blanc", "loup bar"]
 
     # Génération de type de loup basé sur des probabilités spécifiques
@@ -51,11 +51,11 @@ def generer_loup(niv):
 
     # Probabilités conditionnelles pour chaque type de loup
     if r < 0.6:  # 60% pour le loup noir (type le plus commun)
-        loup_creature = Creature(noms[0], loup, guerrier, niv, 0, 60, 60, 25, 15, ["morsure"], poing, nu, butin_loup)
+        loup_creature = Creature(noms[0], loup, guerrier, 1, 0, 60, 60, 17, 0, ["morsure"], poing, nu, butin_loup)
     elif r < 0.9:  # 30% pour le loup blanc
-        loup_creature = Creature(noms[1], loup, guerrier, niv, 0, 50, 50, 30, 10, ["griffure"], poing, nu, butin_loup)
+        loup_creature = Creature(noms[1], loup, guerrier, 1, 0, 50, 50, 13, 5, ["griffure"], poing, nu, butin_loup)
     else:  # 10% pour le loup bar (le plus rare et le plus puissant)
-        loup_creature = Creature(noms[2], loup, guerrier, niv, 0, 70, 70, 20, 20, ["hurlement"], poing, nu, butin_loup)
+        loup_creature = Creature(noms[2], loup, guerrier, 1, 0, 70, 70, 20, 10, ["hurlement"], poing, nu, butin_loup)
     
     # Ajouter de l'expérience à la créature loup
     loup_creature.add_exp(exp)
