@@ -30,3 +30,10 @@ Le joueur peut aussi à tout moment consulter son inventaire</h4>
 pas pus être implémentés. Des éléments comme les marchands, les raretés sur les objets
 la diversité des biomes ... sont présents dans le code mais n'ont pas pu être implémentés
 dans la version finale</h4>
+
+<h3> Setup </h3>
+
+<h4> Pour setup le jeu il suffit de cloner le dépot.
+La seule bibliothèque à installer au préalable est pygame, pour l'installer : 
+pip install pygame
+Puis pour run le jeu simplement lancer jeutest.py</h4>
