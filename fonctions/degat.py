@@ -19,6 +19,7 @@ def degat_creature(creature, joueur):
   chance = rd.randint(1,100)
   
   if chance <= 20: 
+    print("Esquivé !")
     return (0)
   return max(1, (attaque_creature + attaque_arme_creature) - (defense_joueur + defense_armure_joueur))
 
