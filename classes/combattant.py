@@ -2,11 +2,12 @@ from classes.arme import *
 from classes.armure import *
 
 class Combattant(): 
-    def __init__(self,nom,race,classe,niv,pvmax,pv,attaque,defense,competence,arme=poing,armure=nu):
+    def __init__(self,nom,race,classe,niv,exp,pvmax,pv,attaque,defense,competence,arme=poing,armure=nu):
         self.__nom = nom
         self.__race = race
         self.__classe = classe
         self.__niv=niv
+        self.__exp=exp
         self.__pvmax=pvmax
         self.__pv=pv
         self.__attaque=attaque
@@ -33,12 +34,17 @@ class Combattant():
     def set_classe(self, classe):
         self.__classe = classe
 
-
     def get_niv(self):
         return self.__niv
 
     def set_niv(self, niv):
         self.__niv = niv
+
+    def get_exp(self):
+        return self.__exp
+
+    def set_exp(self, exp):
+        self.__exp = exp
 
     def get_pvmax(self):
         return self.__pvmax
@@ -97,3 +103,16 @@ class Combattant():
             print(f"Compétence '{competence_a_supprimer}' supprimée.")
         else:
             print(f"Compétence '{competence_a_supprimer}' n'existe pas dans la liste.")
+    
+    def level_up(self):
+        self.set_pvmax(self.get_pvmax() + self.get_niv() * 2)
+        self.set_pv(self.get_pvmax())
+        self.set_attaque(self.get_attaque() + self.get_niv())
+        self.set_defense(self.get_defense() + (self.get_niv() + 1) / 2)
+        self.set_exp(self.get_exp() - self.get_niv() * 2)
+        self.set_niv(self.get_niv() + 1)
+
+    def add_exp(self, pt):
+        self.set_exp(self.get_exp() + pt)
+        while(self.get_exp() >= self.get_niv() * 2):
+            self.level_up()
