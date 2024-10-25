@@ -1,8 +1,8 @@
 from classes.combattant import Combattant
 
 class Joueur(Combattant):
-    def __init__(self,nom,race,classe,niv,pvmax,pv,attaque,defense,competence,argent,inventaire,arme,armure):
-        super().__init__(nom,race,classe,niv,pvmax,pv,attaque,defense,competence,arme,armure)
+    def __init__(self,nom,race,classe,niv,exp,pvmax,pv,attaque,defense,competence,argent,inventaire,arme,armure):
+        super().__init__(nom,race,classe,niv,exp,pvmax,pv,attaque,defense,competence,arme,armure)
         self.__argent=argent
         self.__inventaire=inventaire
 
