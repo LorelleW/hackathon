@@ -244,7 +244,7 @@ def utiliser_competence(joueur, creature):
     joueur.set_attaque(joueur.get_attaque() + c.get_attaque())
     joueur.set_defense(joueur.get_defense() + c.get_defense())
     joueur.set_pv(max(joueur.get_pvmax(), joueur.get_pv() + c.get_soin()))
-    joueur_utiliser_competence(creature, joueur)
+    joueur_utiliser_competence(creature, joueur, c.get_degat())
 
     creature_attaque_joueur(joueur, creature)
 
