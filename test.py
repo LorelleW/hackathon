@@ -20,6 +20,8 @@ from classes.effets import Effets
 from fonctions.degat import *
 from fonctions.equiper import *
 from fonctions.marchand import *
+from fonctions.combat import *
+from fonctions.generation_creature import *
 
 Neant = Region("autre", 100, {}, 999, "Divinite_inconnue")
 
@@ -41,30 +43,25 @@ epee_bois = Arme("epee_bois", 5, "F", 1, 100, 1, "epee")
 armure_bois = Armure("armure_bois", 5, "F", 1, 99, 1, "haut")
 
 inventaire_Zelda = Inventaire([], [], [], [couronne])
-Zelda = Pnj("Zelda", "civil", 18, inventaire_Zelda, 50)
+Zelda = Pnj("Zelda", "civil", 18, inventaire_Zelda)
 
 force = Competence("force", 1, "attaque * 1.5", 5)
 
 inventaire_Link = Inventaire([], [], [], [])
 butin_slime = Butin([], [], [], [gelee], 1)
 
+Link = Joueur("Link", humain, epeiste, 1, 0, 100, 100, 10, 5, [force], 10, inventaire_Link, epee_bois, armure_bois)
 
-print(butin_slime.get_objet())
+slime1 = generer_slime(5)
+print(slime1.get_nom())
+print(slime1.get_niv())
+print(slime1.get_exp())
+print(slime1.get_pvmax())
+print(slime1.get_pv())
+print(slime1.get_attaque())
+print(slime1.get_defense())
+print()
 
-print("Inventaire Armure")
-inventaire_Link.ajouter_armure(armure_fer)
-print(inventaire_Link.get_armures())
-print("Porte feuille avant")
-print(Link.get_argent())
-print("prix de l'armure de Link")
-print(Link.get_armure().get_prix())
-print("On vend l'armure")
-vendre_armes(armure_bois,Link)
-print("Porte feuille après")
-print(Link.get_argent())
+Link.add_exp(20)
 
-print(Link.get_inventaire().get_armures())
-
-Link = Joueur("Link", humain, epeiste, 1, 100, 100, 10, 5, [force], 10, inventaire_Link, epee_bois, armure_bois)
-
-slime1 = Creature("slime_vert", slime, epeiste, 1, 50, 50, 5, 0, [], poing, nu, butin_slime)
+combat(Link, slime1)
