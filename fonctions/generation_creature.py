@@ -70,13 +70,13 @@ def generer_dragon(niv):
     # Création des instances de base pour le dragon
     Montagne_dragon = Region("montagne", 50, {}, 100, "Ancien dragon")
     dragon_race = Race("dragon", Montagne_dragon, "S", 100)
-    Montagne_dragon.set_population({dragon_race: 1})
-
+    Montagne_dragon.__dict__["population"] = {dragon_race: 1}  # Associer le dragon à la région
+    
     dragon_classe = Classe("Ancien", "écailles résistantes", "agressif")
     ecaille = Objet("écaille de dragon", "ressource", 100, "organique", "S")
     dent = Objet("dent de dragon", "ressource", 150, "organique", "S")
     fureur_dragon = Arme("fureur_dragon", 17, "S", 100, 100, 1, "fureur")
-    butin_dragon = Butin([], [], [fureur_dragon], [dent,ecaille], 100)
+    butin_dragon = Butin([ecaille], [], [], [dent,ecaille], 100)
     nom = "Dragon de feu"
 
     # Caractéristiques du dragon
