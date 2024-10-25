@@ -3,6 +3,7 @@ from classes.joueur import Joueur
 from classes.creature import Creature
 from classes.butin import Butin
 from fonctions.degat import *
+from fonctions.equiper import *
 
 def gagner(joueur, creature):
     butin_creature = creature.get_butin()
@@ -19,10 +20,12 @@ def gagner(joueur, creature):
         if rd.randint(1, 100) > 50:
             joueur.get_inventaire().ajouter_arme(arme)
             print(f"{arme.get_nom()} ajouté(e) à l'inventaire de {joueur.get_nom()}")
+            equiper_arme(joueur, arme)
     for armure in armures:
         if rd.randint(1, 100) > 50:
             joueur.get_inventaire().ajouter_armure(armure)
             print(f"{armure.get_nom()} ajouté(e) à l'inventaire de {joueur.get_nom()}")
+            equiper_armure(joueur, armure)
     for objet in objets:
         if rd.randint(1, 100) > 50:
             joueur.get_inventaire().ajouter_objet(objet)
