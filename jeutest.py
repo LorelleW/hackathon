@@ -54,7 +54,7 @@ benediction = Competence("benediction", 1, 0, 10, 0, 5, 0, [])
 inventaire_Link = Inventaire([], [], [], [])
 butin_slime = Butin([], [], [], [gelee], 1)
 
-Link = Joueur("Link", humain, epeiste, 1, 0, 100, 100, 10, 5, [sacrifice], 10, inventaire_Link, epee_bois, armure_bois)
+Link = Joueur("Link", humain, epeiste, 1, 0, 100, 100, 10, 5, [force], 10, inventaire_Link, epee_bois, armure_bois)
 
 #------------------------------------------------------------------------------------------------
 
@@ -219,7 +219,7 @@ def bouton(texte, x, y, action=None):
 
 # Exemple de fonction à lier aux boutons
 def attaquer(joueur, creature):
-    global monstre_apparu, en_jeu
+    global monstre_apparu, en_jeu, init_attaque, init_defense
 
     print(f"{joueur.get_nom()}({joueur.get_pv()}/{joueur.get_pvmax()})")
     print(f"{creature.get_nom()}({creature.get_pv()}/{creature.get_pvmax()})")
@@ -227,6 +227,8 @@ def attaquer(joueur, creature):
     creature_attaque_joueur(joueur, creature)
 
     if creature.get_pv() <= 0:
+        joueur.set_attaque(init_attaque)
+        joueur.set_defense(init_defense)
         gagner(joueur, creature)
         joueur.set_pv(min(joueur.get_pvmax(), joueur.get_pv() + joueur.get_pvmax() / 2))
         monstre_apparu = False
@@ -235,7 +237,7 @@ def attaquer(joueur, creature):
         en_jeu=False
 
 def utiliser_competence(joueur, creature):
-    global monstre_apparu, en_jeu
+    global monstre_apparu, en_jeu, init_attaque, init_defense
 
     c = joueur.get_competence()[0]
     print(f"{joueur.get_nom()}({joueur.get_pv()}/{joueur.get_pvmax()})")
@@ -249,12 +251,15 @@ def utiliser_competence(joueur, creature):
     creature_attaque_joueur(joueur, creature)
 
     if creature.get_pv() <= 0:
+        joueur.set_attaque(init_attaque)
+        joueur.set_defense(init_defense)
         gagner(joueur, creature)
         joueur.set_pv(min(joueur.get_pvmax(), joueur.get_pv() + joueur.get_pvmax() / 2))
         monstre_apparu = False
         monstre_rect = None
     if joueur.get_pv()<=0:
         en_jeu=False
+    time.sleep(0.01)
 
 def fuir():
     global monstre_apparu
@@ -283,6 +288,9 @@ en_jeu = True
 current_time = pygame.time.get_ticks()  # Temps actuel en millisecondes
 Slimy = generer_monstre()
 monstre_apparu = False
+
+init_attaque = Link.get_attaque()
+init_defense = Link.get_defense()
 
 def aux():
     attaquer(Link, Slimy)
@@ -326,6 +334,8 @@ while en_jeu:
     current_time = pygame.time.get_ticks()  # Temps actuel en millisecondes
     if not monstre_apparu and distance_parcourue >= distance_monstre:
         Slimy = generer_monstre()
+        init_attaque = Link.get_attaque()
+        init_defense = Link.get_defense()
 
     # Affichage du fond d'écran
     fenetre.blit(fond_image, (0, 0))
@@ -353,7 +363,7 @@ while en_jeu:
         bouton_attaque_x = (largeur_fenetre // 2-160)
         bouton_attaque_y = (hauteur_fenetre // 2+290)
         bouton_competence_x = bouton_attaque_x + 325
-        bouton_competence_y = bouton_competence_y = bouton_attaque_y
+        bouton_competence_y = bouton_attaque_y
         bouton_fuir_x = (largeur_fenetre // 2+10)
         bouton_fuir_y = bouton_attaque_y 
         
