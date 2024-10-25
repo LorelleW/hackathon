@@ -5,7 +5,8 @@
 <h4> Le projet à été réalisé par une équipe de 5 ING1 et supervisée par 2 ING2 dans le cadre
 d'un hackaton de 36h, le but étant de faire travailler les structures de données.
 Le partit pris de l'équipe à été de consacrer une partie du temps donné à la réalisation
-et l'implémentations de graphismes réalisés en ASCII art pour un style minimaliste et unique</h4>
+et l'implémentations de graphismes réalisés en ASCII art pour un style minimaliste et unique.
+Le style du jeu est un roguelike </h4>
 
 
 <h3>  Gameplay </h3>
@@ -15,7 +16,7 @@ et l'implémentations de graphismes réalisés en ASCII art pour un style minima
 un combat s'enclenche. La mécanique de combat est le coeur du gameplay : le joueur, dépendamment des informations
 qu'il a sur le heros et sur le monstre peut évalluer la situation et fuir ou attaquer. Chaque attaque sera
 suivie d'une réponse de l'ennemi. Si le monstre est tué, il peut drop un ou plusieurs points d'exp
-et éventuellement son stuff si il en a une</h4>
+et éventuellement son stuff si il en a une. Chaque kill heal le joueur de la moitié de ses HP max.</h4>
 
 <h3> Contrôles </h3>
 
