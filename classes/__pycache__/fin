@@ -1,0 +1,20 @@
+   def fenetre_fin():
+                fenetrefin=pygame.display.set_mode((600,400))
+                pygame.display.set_caption("fenetre de fin")
+
+                jeu_en_cours= True
+                while jeu_en_cours:
+                    for event in pygame.event.get():
+                        if event.type == pygame.QUIT:
+                            pygame.quit()
+                            sys.exit()
+
+                    fenetrefin.fill(BLANC)
+
+                    font = pygame.font.Font(None, 30)
+                    texte= font.render("BRAVO VOUS AVEZ FINI LE JEU!", True, NOIR)
+                    fenetrefin.blit(texte,(600 // 2 -150, 400//2 -50))
+
+                    pygame.display.update()
+
+            fenetre_fin()
