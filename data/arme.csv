@@ -1,8 +1,8 @@
 nom,attaque,rarete,prix,etat,restriction,type
-“epee_cassee”,150,“F”,50,50,1,“epee”
-“thor”,590,“B",60,60,5,“marteau”
-“arc_elfique”,850,"S”,600,80,60,“arc”
-“couteau",50,“D",250,30,3,“couteau"
-“hachette”,90,“C",350,40,4,“hache”
-“kuma”,350,“B”,450,70,20,“katana”
-“abracadabra”,300,“A”,500,90,35,“bâton_magique”
+"epee_cassee",150,"F",50,50,1,"epee"
+"thor",590,"B",60,60,5,"marteau"
+"arc_elfique",850,"S",600,80,60,"arc"
+"couteau",50,"D",250,30,3,"couteau"
+"hachette",90,"C",350,40,4,"hache"
+"kuma",350,"B",450,70,20,"katana"
+"abracadabra",300,"A",500,90,35,"bâton_magique"
