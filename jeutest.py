@@ -244,7 +244,7 @@ def utiliser_competence(joueur, creature):
     print(f"{creature.get_nom()}({creature.get_pv()}/{creature.get_pvmax()})")
 
     joueur.set_attaque(joueur.get_attaque() + c.get_attaque())
-    joueur.set_defense(joueur.get_defense() + c.get_defense())
+    joueur.set_defense(max(0, joueur.get_defense() + c.get_defense()))
     joueur.set_pv(max(joueur.get_pvmax(), joueur.get_pv() + c.get_soin()))
     joueur_utiliser_competence(creature, joueur, c.get_degat())
 
@@ -294,10 +294,11 @@ init_defense = Link.get_defense()
 
 def aux():
     attaquer(Link, Slimy)
-    time.sleep(0.2)
+    time.sleep(0.5)
 
 def aux_competence():
     utiliser_competence(Link, Slimy)
+    time.sleep(0.5)
     
 #------------------------------------------------------------------------------------------------
 
