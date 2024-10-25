@@ -290,7 +290,7 @@ while en_jeu:
             fond_image = pygame.image.load(liste_region[region_actuel1]).convert()
             fond_image = pygame.transform.scale(fond_image, (largeur_fenetre, hauteur_fenetre)) 
 
-        if nombre_de_scene>=4:
+        if nombre_de_scene>=10:
             fond_image = pygame.image.load(liste_region[5]).convert()
             fond_image = pygame.transform.scale(fond_image, (largeur_fenetre, hauteur_fenetre)) 
 
