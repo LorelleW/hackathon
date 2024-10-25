@@ -47,8 +47,9 @@ gelee = Objet("gelee", "autre", 1, "organique", "D")
 epee_bois = Arme("epee_bois", 5, "F", 1, 100, 1, "epee")
 armure_bois = Armure("armure_bois", 5, "F", 1, 99, 1, "haut")
 
-
-force = Competence("force", 1, 20, 0, 0, 0, 3, [])
+force = Competence("force", 1, 20, 0, 0, 0, 0, [])
+sacrifice = Competence("sacrifice", 1, 0, -5, 2, 0, 0, [])
+benediction = Competence("benediction", 1, 0, 10, 0, 5, 0, [])
 
 inventaire_Link = Inventaire([], [], [], [])
 butin_slime = Butin([], [], [], [gelee], 1)
@@ -232,6 +233,28 @@ def attaquer(joueur, creature):
     if joueur.get_pv()<=0:
         en_jeu=False
 
+def utiliser_competence(joueur, creature):
+    global monstre_apparu, en_jeu
+
+    c = joueur.get_competence()[0]
+    print(f"{joueur.get_nom()}({joueur.get_pv()}/{joueur.get_pvmax()})")
+    print(f"{creature.get_nom()}({creature.get_pv()}/{creature.get_pvmax()})")
+
+    joueur.set_attaque(joueur.get_attaque() + c.get_attaque())
+    joueur.set_defense(joueur.get_defense() + c.get_defense())
+    joueur.set_pv(max(joueur.get_pvmax(), joueur.get_pv() + c.get_soin()))
+    joueur_utiliser_competence(creature, joueur)
+
+    creature_attaque_joueur(joueur, creature)
+
+    if creature.get_pv() <= 0:
+        gagner(joueur, creature)
+        joueur.set_pv(min(joueur.get_pvmax(), joueur.get_pv() + joueur.get_pvmax() / 2))
+        monstre_apparu = False
+        monstre_rect = None
+    if joueur.get_pv()<=0:
+        en_jeu=False
+
 def fuir():
     global monstre_apparu
     print("Fuite réussie!")
@@ -264,6 +287,9 @@ def aux():
     attaquer(Link, Slimy)
     time.sleep(0.2)
 
+def aux_competence():
+    utiliser_competence(Link, Slimy)
+    
 #------------------------------------------------------------------------------------------------
 
 while en_jeu:
@@ -325,11 +351,14 @@ while en_jeu:
         # Calculer les positions pour centrer les boutons
         bouton_attaque_x = (largeur_fenetre // 2) - (150 // 2)
         bouton_attaque_y = (hauteur_fenetre // 2) - (40 // 2)
+        bouton_competence_x = (largeur_fenetre // 2) - (150 // 2)
+        bouton_competence_y = (hauteur_fenetre // 2) + (40 // 2)
         bouton_fuir_x = (largeur_fenetre // 2) - (150 // 2)
         bouton_fuir_y = bouton_attaque_y + 50  # Espace entre les boutons
 
         # Afficher les boutons "Attaquer" et "Fuir"
         bouton("Attaquer", bouton_attaque_x, bouton_attaque_y, aux)
+        bouton(Link.get_competence()[0].get_nom(), bouton_competence_x, bouton_competence_y, aux_competence)
         bouton("Fuir", bouton_fuir_x, bouton_fuir_y, fuir)
 
     # Rafraîchir l'écran
