@@ -94,6 +94,10 @@ slime_rect = None  # Rectangle du monstre (sera défini lors de l'apparition)
 loup_image = pygame.image.load("interface/loup.png").convert_alpha()  # Remplace par l'image de ton monstre
 loup_image = pygame.transform.scale(loup_image, (personnage_image.get_width(), personnage_image.get_height()))  # Mise à l'échelle
 loup_rect = None  # Rectangle du monstre (sera défini lors de l'apparition)
+dragon_image = pygame.image.load("interface/dragon.png").convert_alpha()  # Remplace par l'image de ton monstre
+dragon_image = pygame.transform.scale(dragon_image, (personnage_image.get_width(), personnage_image.get_height()))  # Mise à l'échelle
+dragon_rect = None  # Rectangle du monstre (sera défini lors de l'apparition)
+
 monstre_image = slime_image
 
 # Variables du joueur
@@ -275,12 +279,16 @@ def generer_monstre():
     monstre_rect = monstre_image.get_rect(center=(personnage_rect.right + 50, personnage_rect.centery))  # Juste devant le personnage
     distance_monstre += rd.randint(50, 300)
 
-    if rd.randint(1, 100) > 30:
+    if rd.randint(1, 100) <40:
         monstre_image = slime_image
         return generer_slime(rd.randint(min(1, Link.get_niv()-2), Link.get_niv()+2))
-    monstre_image = loup_image
-    return generer_loup(rd.randint(min(1, Link.get_niv()-2), Link.get_niv()+2))
-
+    elif rd.randint(1,100)<50:
+        monstre_image = loup_image
+        return generer_loup(rd.randint(min(1, Link.get_niv()-2), Link.get_niv()+2))
+    else: 
+        monstre_image = dragon_image
+        return generer_dragon(rd.randint(min(1, Link.get_niv()-2), Link.get_niv()+2))
+        
 # Boucle du jeu
 clock = pygame.time.Clock()
 en_jeu = True
