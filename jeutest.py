@@ -47,9 +47,9 @@ gelee = Objet("gelee", "autre", 1, "organique", "D")
 epee_bois = Arme("epee_bois", 5, "F", 1, 100, 1, "epee")
 armure_bois = Armure("armure_bois", 5, "F", 1, 99, 1, "haut")
 
-force = Competence("force", 1, 20, 0, 0, 0, 0, [])
-sacrifice = Competence("sacrifice", 1, 0, -5, 2, 0, 0, [])
-benediction = Competence("benediction", 1, 0, 10, 0, 5, 0, [])
+force = Competence("Force", 1, 20, 0, 0, 0, 0, [])
+sacrifice = Competence("Sacrifice", 1, 0, -5, 2, 0, 0, [])
+benediction = Competence("Benediction", 1, 0, 10, 0, 5, 0, [])
 
 inventaire_Link = Inventaire([], [], [], [])
 butin_slime = Butin([], [], [], [gelee], 1)
@@ -245,7 +245,7 @@ def utiliser_competence(joueur, creature):
 
     joueur.set_attaque(joueur.get_attaque() + c.get_attaque())
     joueur.set_defense(max(0, joueur.get_defense() + c.get_defense()))
-    joueur.set_pv(max(joueur.get_pvmax(), joueur.get_pv() + c.get_soin()))
+    joueur.set_pv(min(joueur.get_pvmax(), joueur.get_pv() + c.get_soin()))
     joueur_utiliser_competence(creature, joueur, c.get_degat())
 
     creature_attaque_joueur(joueur, creature)
