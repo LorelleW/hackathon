@@ -21,13 +21,13 @@ def generer_slime(niv):
     r = rd.randint(0, 3)
     exp = niv * (niv - 1)
     if (r == 0):
-        slime = Creature(noms[r], slime, nomade, 1, 0, 40, 40, 15, 0, [], poing, nu, butin_slime)
+        slime = Creature(noms[r], slime, nomade, 1, 0, 40, 40, 18, 0, [], poing, nu, butin_slime)
     elif (r == 1):
-        slime = Creature(noms[r], slime, nomade, 1, 0, 50, 50, 5, 0, [], poing, nu, butin_slime)
+        slime = Creature(noms[r], slime, nomade, 1, 0, 50, 50, 8, 0, [], poing, nu, butin_slime)
     elif (r == 2):
-        slime = Creature(noms[r], slime, nomade, 1, 0, 40, 40, 5, 10, [], poing, nu, butin_slime)
+        slime = Creature(noms[r], slime, nomade, 1, 0, 40, 40, 8, 10, [], poing, nu, butin_slime)
     else:
-        slime = Creature(noms[r], slime, nomade, 1, 0, 50, 50, 15, 10, [], poing, nu, butin_slime)
+        slime = Creature(noms[r], slime, nomade, 1, 0, 50, 50, 18, 10, [], poing, nu, butin_slime)
     slime.add_exp(exp)
 
     return slime

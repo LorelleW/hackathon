@@ -108,7 +108,7 @@ class Combattant():
         self.set_pvmax(self.get_pvmax() + self.get_niv() * 2)
         self.set_pv(self.get_pvmax())
         self.set_attaque(self.get_attaque() + self.get_niv())
-        self.set_defense(self.get_defense() + (self.get_niv() + 1) / 2)
+        self.set_defense(self.get_defense() + (self.get_niv() + 1) // 2)
         self.set_exp(self.get_exp() - self.get_niv() * 2)
         self.set_niv(self.get_niv() + 1)
 

@@ -1,6 +1,0 @@
-Nom,Description,Dégât,Coût,Type
-"""Boule de feu""","""Lance une boule de feu incandescente.""",50,30,"""Feu"""
-"""Éclair""","""Envoie un éclair foudroyant.""",70,40,"""Électricité"""
-"""Vague de givre""","""Gèle les ennemis à proximité.""",40,25,"""Glace"""
-"""Explosion""","""Provoque une puissante explosion magique.""",100,50,"""Explosion"""
-"""Soin""","""Rend des points de vie à l'allié.""",-30,20,"""Soin"""

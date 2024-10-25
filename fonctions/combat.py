@@ -30,8 +30,8 @@ def gagner(joueur, creature):
 
     joueur.set_argent(joueur.get_argent() + butin_creature.get_argent())
     print(f"{joueur.get_nom()} gagne {butin_creature.get_argent()} pièces")
-    joueur.add_exp((creature.get_niv() + 1) / 2)
-    print(f"{joueur.get_nom()} gagne {(creature.get_niv() + 1) / 2} points d'exp")
+    joueur.add_exp((creature.get_niv() + 1) // 2)
+    print(f"{joueur.get_nom()} gagne {(creature.get_niv() + 1) // 2} points d'exp")
 
 def combat(joueur,creature):
     while joueur.get_pv() > 0 and creature.get_pv() > 0:
