@@ -352,7 +352,7 @@ while en_jeu:
         bouton_attaque_x = (largeur_fenetre // 2) - (150 // 2)
         bouton_attaque_y = (hauteur_fenetre // 2) - (40 // 2)
         bouton_competence_x = (largeur_fenetre // 2) - (150 // 2)
-        bouton_competence_y = (hauteur_fenetre // 2) + (40 // 2)
+        bouton_competence_y = (hauteur_fenetre // 2) - 40
         bouton_fuir_x = (largeur_fenetre // 2) - (150 // 2)
         bouton_fuir_y = bouton_attaque_y + 50  # Espace entre les boutons
 
