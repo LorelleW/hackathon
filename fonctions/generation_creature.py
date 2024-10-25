@@ -37,7 +37,7 @@ def generer_loup(niv):
     # Création des instances de base pour les loups
     Foret_sombre = Region("forêt", 10, {}, 20, "Chef de meute")
     loup = Race("loup", Foret_sombre, "C", 70)
-    Foret_sombre.__dict__["population"] = {loup: 10}  # Assigner des loups à la forêt
+    Foret_sombre.set_population({loup: 10})
     
     guerrier = Classe("guerrier", "armure légère", "agressif")
     fourrure = Objet("fourrure", "ressource", 15, "organique", "C")
