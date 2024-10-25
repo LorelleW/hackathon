@@ -31,3 +31,61 @@ def generer_slime(niv):
     slime.add_exp(exp)
 
     return slime
+
+
+def generer_loup(niv):
+    # Création des instances de base pour les loups
+    Foret_sombre = Region("forêt", 10, {}, 20, "Chef de meute")
+    loup = Race("loup", Foret_sombre, "C", 70)
+    Foret_sombre.__dict__["population"] = {loup: 10}  # Assigner des loups à la forêt
+    
+    guerrier = Classe("guerrier", "armure légère", "agressif")
+    fourrure = Objet("fourrure", "ressource", 15, "organique", "C")
+    croc = Objet("croc de loup", "ressource", 5, "organique", "C")
+    butin_loup = Butin([], [], [croc], [fourrure], 10)
+    noms = ["loup noir", "loup blanc", "loup bar"]
+
+    # Génération de type de loup basé sur des probabilités spécifiques
+    r = rd.random()
+    exp = niv * (niv - 1)   # Coefficient d'XP plus élevé pour les loups
+
+    # Probabilités conditionnelles pour chaque type de loup
+    if r < 0.6:  # 60% pour le loup noir (type le plus commun)
+        loup_creature = Creature(noms[0], loup, guerrier, niv, 0, 60, 60, 25, 15, ["morsure"], poing, nu, butin_loup)
+    elif r < 0.9:  # 30% pour le loup blanc
+        loup_creature = Creature(noms[1], loup, guerrier, niv, 0, 50, 50, 30, 10, ["griffure"], poing, nu, butin_loup)
+    else:  # 10% pour le loup bar (le plus rare et le plus puissant)
+        loup_creature = Creature(noms[2], loup, guerrier, niv, 0, 70, 70, 20, 20, ["hurlement"], poing, nu, butin_loup)
+    
+    # Ajouter de l'expérience à la créature loup
+    loup_creature.add_exp(exp)
+
+    return loup_creature
+
+
+
+def generer_dragon(niv):
+    # Générer un nombre aléatoire pour déterminer si le dragon sera créé
+    prob = rd.random()
+    if prob > 0.1:  # Seul 10% de chance de générer un dragon
+        return None  # Aucun dragon n'est généré
+
+    # Création des instances de base pour le dragon
+    Montagne_dragon = Region("montagne", 50, {}, 100, "Ancien dragon")
+    dragon_race = Race("dragon", Montagne_dragon, "S", 100)
+    Montagne_dragon.__dict__["population"] = {dragon_race: 1}  # Associer le dragon à la région
+    
+    dragon_classe = Classe("Ancien", "écailles résistantes", "agressif")
+    ecaille = Objet("écaille de dragon", "ressource", 100, "organique", "S")
+    dent = Objet("dent de dragon", "ressource", 150, "organique", "S")
+    butin_dragon = Butin([ecaille], [], [dent], [], 100)
+    nom = "Dragon de feu"
+
+    # Caractéristiques du dragon
+    exp = niv * (niv -1)  # Grande quantité d'XP
+    dragon_creature = Creature(nom, dragon_race, dragon_classe, niv, 0, 500, 500, 100, 80, ["souffle de feu"], poing, nu, butin_dragon)
+
+    # Ajouter de l'expérience à la créature dragon
+    dragon_creature.add_exp(exp)
+
+    return dragon_creature
