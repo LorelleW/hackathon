@@ -2,7 +2,6 @@ class Competence():
     def __init__(self,nom:str,niv:int,attaque:int,defense:int,degat:int,soin:int,delai:int,effet:int):
         self.__nom=nom 
         self.__niv=niv
-        self.__description=description
         self.__delai=delai
         self.__attaque=attaque
         self.__defense=defense
