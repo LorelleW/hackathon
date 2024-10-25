@@ -45,7 +45,7 @@ armure_bois = Armure("armure_bois", 5, "F", 1, 99, 1, "haut")
 inventaire_Zelda = Inventaire([], [], [], [couronne])
 Zelda = Pnj("Zelda", "civil", 18, inventaire_Zelda)
 
-force = Competence("force", 1, "attaque * 1.5", 5)
+force = Competence("force", 1, 20, 0, 0, 0, 3, [])
 
 inventaire_Link = Inventaire([], [], [], [])
 butin_slime = Butin([], [], [], [gelee], 1)
