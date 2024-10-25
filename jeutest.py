@@ -169,12 +169,13 @@ def bouton(texte, x, y, action=None):
 
 # Exemple de fonction à lier aux boutons
 def attaquer(joueur, creature):
-    global monstre_apparu, en_jeu
+    global monstre_apparu, en_jeu, degat_joueur,degat_creature
 
     print(f"{joueur.get_nom()}({joueur.get_pv()}/{joueur.get_pvmax()})")
     print(f"{creature.get_nom()}({creature.get_pv()}/{creature.get_pvmax()})")
-    joueur_attaque_creature(creature, joueur)
-    creature_attaque_joueur(joueur, creature)
+    degat_joueur=joueur_attaque_creature(creature, joueur)
+    #rajouter ici la box damage!!
+    degat_creature=creature_attaque_joueur(joueur, creature)
 
     if creature.get_pv() <= 0:
         gagner(joueur, creature)
