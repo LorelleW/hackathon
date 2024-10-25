@@ -41,3 +41,13 @@ def joueur_attaque_creature(creature, joueur):
   if (pv <= 0):
     print("Vous avez vaincu le monstre")
   return degat
+
+def joueur_utiliser_competence(creature, joueur, mult):
+  pv = creature.get_pv()
+  degat = degat_joueur(joueur, creature) * mult
+  pv -= degat
+  print(f"{joueur.get_nom()} inflige {degat} à {creature.get_nom()}")
+  creature.set_pv(pv)
+  if (pv <= 0):
+    print("Vous avez vaincu le monstre")
+  return degat
