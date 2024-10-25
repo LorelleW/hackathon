@@ -54,7 +54,7 @@ benediction = Competence("benediction", 1, 0, 10, 0, 5, 0, [])
 inventaire_Link = Inventaire([], [], [], [])
 butin_slime = Butin([], [], [], [gelee], 1)
 
-Link = Joueur("Link", humain, epeiste, 1, 0, 100, 100, 10, 5, [sacrifice], 10, inventaire_Link, epee_bois, armure_bois)
+Link = Joueur("Link", humain, epeiste, 1, 0, 100, 100, 10, 5, [force], 10, inventaire_Link, epee_bois, armure_bois)
 
 #------------------------------------------------------------------------------------------------
 
