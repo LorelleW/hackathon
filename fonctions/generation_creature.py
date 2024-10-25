@@ -80,7 +80,8 @@ def generer_dragon(niv):
     dragon_classe = Classe("Ancien", "écailles résistantes", "agressif")
     ecaille = Objet("écaille de dragon", "ressource", 100, "organique", "S")
     dent = Objet("dent de dragon", "ressource", 150, "organique", "S")
-    butin_dragon = Butin([ecaille], [], [dent], [], 100)
+    fureur_dragon = Arme("fureur_dragon", 10, "S", 50, 100, 1, "fureur")
+    butin_dragon = Butin([ecaille], [], [], [dent,ecaille], 100)
     nom = "Dragon de feu"
 
     # Caractéristiques du dragon
