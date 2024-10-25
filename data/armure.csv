@@ -1,6 +1,6 @@
 nom,defense,rarete,prix,etat,restriction,type
 “casquette”,60,“F”,40,90,1,“casque”
-“armure",500,“B”,60,60,5,“plastron”
+"armure",500,"B",60,60,5,"plastron"
 “manicure",850,"S”,800,75,50,“gants”
 “superman",230,“D",250,30,6,“cape”
 “gateau”,450,“C",500,36,4,“gant”
