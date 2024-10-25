@@ -5,7 +5,7 @@ identite,race,classe,niv,pvmax,pv,attaque,defense,competence,arme,armure,butin
 "Loup-Garou-Gaga","Orcs des Montagnes","Loup",55,700,400,150,250,"Lune","hachette","superman","manuel du voleur, fragment d'âme, lune argentée"
 "Golem-Gaga","Humains de la Plaine","Golem",80,900,750,280,180,"Force brute","kuma","gâteau","codex des chevaliers, ration de voyage, sang ancien"
 "Spectre-Sourire","Elfes Sylvains","Fantôme",65,600,350,120,150,"Invisible","abracadabra","pauli","tome des éléments, secret, étoffe enchantée"
-"Minotaure-Mignon","Orcs des Montagnes","Bête",75,750,550,230,220,"Charge","epee_cassee","turc","recueil de légendes, cendres magiques, labyrinthe"
+"Minotaure-Mignon","Humains de la Plaine","Chien armé",75,750,550,230,220,"Charge","epee_cassee","turc","recueil de légendes, cendres magiques, labyrinthe"
 "Phénix-Pétillant","Dragons de Feu","Oiseau",85,950,800,290,230,"Renaissance","thor","superman","manuel du voleur, perle magique, trésor"
 "Sphinx-Sourire","Esprits des Sables","Garde",60,800,450,220,180,"Enigme","arc_elfique","manicure","traite des arcanes, secret, clé ancienne"
 "Goule-Grenouille","Nains des Mines","Mort-vivant",50,700,400,140,160,"Épouvante","couteau","gâteau","tome des éléments, fragment d'âme, sang ancien"
