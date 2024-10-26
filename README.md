@@ -21,7 +21,7 @@ Le joueur peut également consulter son inventaire à tout moment. </h4>
 
 <h3> Contexte</h3>
 
-<h4> >Le jeu ayant été réalisé dans un délai très court, plusieurs éléments n’ont pas pu être implémentés. Bien que présents dans le code, des éléments comme les marchands, la rareté des objets, et la diversité des biomes n'ont pas été intégrés dans la version finale. </h4>
+<h4> Le jeu ayant été réalisé dans un délai très court, plusieurs éléments n’ont pas pu être implémentés. Bien que présents dans le code, des éléments comme les marchands, la rareté des objets, et la diversité des biomes n'ont pas été intégrés dans la version finale. </h4>
 
 <h3> Setup </h3>
 
