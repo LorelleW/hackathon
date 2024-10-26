@@ -36,4 +36,4 @@ dans la version finale</h4>
 <h4> Pour setup le jeu il suffit de cloner le dépôt.
 La seule bibliothèque à installer au préalable est Pygame, pour l'installer : 
 pip install pygame
-Pour run le jeu, simplement lancer jeutest.py</h4>
+Pour run le jeu, simplement lancer main.py</h4>
