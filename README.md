@@ -2,38 +2,29 @@
 
 <h3> Introduction </h3>
 
-<h4> Le projet à été réalisé par une équipe de 5 ING1 et supervisée par 2 ING2 dans le cadre
-d'un hackaton de 36h, le but étant de faire travailler les structures de données.
-Le parti pris de l'équipe à été de consacrer une partie du temps donné à la réalisation
-et l'implémentation de graphismes réalisés en ASCII Art pour un style minimaliste et unique.
-Le style du jeu est un roguelike </h4>
+<h4> Le projet a été réalisé par une équipe de 5 étudiants en première année d’ingénierie (ING1) et supervisé par 2 étudiants de deuxième année (ING2) dans le cadre
+d'un hackathon de 36 heures, dont le but était de faire travailler les structures de données.
+L’équipe a choisi de consacrer une partie de ce temps à la création et à l’intégration de graphismes en ASCII Art, pour offrir un style minimaliste et unique.
+Le jeu adopte le style roguelike. </h4>
 
 
 <h3>  Gameplay </h3>
 
-<h4> Le gameplay du jeu consiste à avancer sur une ligne droite
-à travers plusieurs biomes. A chaque pas, une rencontre avec un monstre est possible, à ce moment,
-un combat s'enclenche. La mécanique de combat est le coeur du gameplay : le joueur, dépendamment des informations
-qu'il a sur le héros et sur le monstre, peut évaluer la situation avant de choisir entre une option entre la fuite, l'attaque ou l'utilisation d'une compétence. Chaque attaque sera
-suivie d'une réponse de l'ennemi. Si le monstre est tué, il peut drop un ou plusieurs points d'exp
-et éventuellement son stuff si il en a un. Chaque kill heal le joueur de la moitié de ses HP max.</h4>
+<h4> Le gameplay consiste à avancer sur une ligne droite
+à travers plusieurs biomes. À chaque pas, une rencontre avec un monstre est possible, déclenchant alors un combat.
+La mécanique de combat est au cœur du gameplay : le joueur, en fonction des informations disponibles sur le héros et le monstre, peut évaluer la situation avant de choisir une action parmi la fuite, l’attaque ou l’utilisation d’une compétence. Chaque attaque est suivie d’une réponse de l’ennemi. Si le monstre est tué, il peut lâcher un ou plusieurs points d’expérience, et éventuellement son équipement s’il en possède. Chaque victoire soigne le joueur de la moitié de ses points de vie maximum. </h4>
 
 <h3> Contrôles </h3>
 
-<h4> Les contrôles sont assez rudimentaires, flêche de droite, pour aller à droite,
-click gauche sur les différents boutons pour effectuer leur actions (attaquer ect...).
-Le joueur peut aussi à tout moment consulter son inventaire</h4>
+<h4> Les contrôles sont rudimentaires : flèche droite pour avancer, clic gauche sur les boutons pour effectuer des actions (attaquer, etc.).
+Le joueur peut également consulter son inventaire à tout moment. </h4>
 
 <h3> Contexte</h3>
 
-<h4> Le jeu ayant été réalisé dans un temps très court, plusieurs éléments n'ont
-pas pu être implémentés. Des éléments comme les marchands, la rareté des objets
-la diversité des biomes ... sont présents dans le code mais n'ont pas pu être implémentés
-dans la version finale</h4>
+<h4> >Le jeu ayant été réalisé dans un délai très court, plusieurs éléments n’ont pas pu être implémentés. Bien que présents dans le code, des éléments comme les marchands, la rareté des objets, et la diversité des biomes n'ont pas été intégrés dans la version finale. </h4>
 
 <h3> Setup </h3>
 
-<h4> Pour setup le jeu il suffit de cloner le dépôt.
-La seule bibliothèque à installer au préalable est Pygame, pour l'installer : 
-pip install pygame
-Pour run le jeu, simplement lancer main.py</h4>
+<h4> Pour installer le jeu, il suffit de cloner le dépôt. La seule bibliothèque requise au préalable est Pygame. Pour l'installer, exécutez :
+<code>pip install pygame</code>
+Pour lancer le jeu, exécutez simplement <code>main.py</code> </h4>
