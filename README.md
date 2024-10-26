@@ -26,5 +26,5 @@ Le joueur peut également consulter son inventaire à tout moment. </h4>
 <h3> Setup </h3>
 
 <h4> Pour installer le jeu, il suffit de cloner le dépôt. La seule bibliothèque requise au préalable est Pygame. Pour l'installer, exécutez :
-<code>pip install pygame</code>
+<code>pip install pygame</code><br>
 Pour lancer le jeu, exécutez simplement <code>main.py</code> </h4>
