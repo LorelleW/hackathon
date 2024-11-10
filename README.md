@@ -3,7 +3,7 @@
 <h3> Introduction </h3>
 
 <h4> Le projet a été réalisé par une équipe de 5 étudiants en première année d’ingénierie (ING1) et supervisé par 2 étudiants de deuxième année (ING2) dans le cadre
-d'un hackathon de 36 heures, dont le but était de faire travailler les structures de données.
+d'un hackathon de 34 heures, dont le but était de faire travailler les structures de données.
 L’équipe a choisi de consacrer une partie de ce temps à la création et à l’intégration de graphismes en ASCII Art, pour offrir un style minimaliste et unique.
 Le jeu adopte le style roguelike. </h4>
 
